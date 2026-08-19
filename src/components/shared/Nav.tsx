@@ -16,12 +16,12 @@ interface Props {
 }
 
 const links: LinkItem[] = [
-    { title: 'Home', href: '/' },
-    { title: 'About', href: '/about' },
-    { title: 'Tour Packages', href: '/tour-packages' },
-    { title: 'Gallery', href: '/gallery' },
-    { title: 'Testimonial', href: '/testimonials' },
-    { title: 'Contact', href: '/contact' },
+  { title: "Home", href: "/" },
+  { title: "About", href: "/about" },
+  { title: "Events", href: "/events" },
+  { title: "Gallery", href: "/gallery" },
+  { title: "Pricing", href: "/pricing" },
+  { title: "Contact", href: "/contact" },
 ];
 
 export default function Nav({ wrapperRef, onLinkClick }: Props) {

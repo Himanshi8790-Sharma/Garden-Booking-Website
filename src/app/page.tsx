@@ -1,24 +1,27 @@
 import { Metadata } from 'next';
 import HeroSection from '../components/home/hero/HeroSection';
 import OccasionBannerSlider from '../components/home/banner-slider/OccasionBannerSlider';
-// import DestinationsGrid from "@/components/home/destinations/DestinationsGrid";
-// import GallerySection from "@/components/home/gallery/GallerySection";
-// import ReviewsSection from "@/components/home/reviews/ReviewsSection";
-// import ProcessSection from "@/components/home/process/ProcessSection";
-// import WhyChooseUs from "@/components/home/features/WhyChooseUs";
-// import FaqSection from "@/components/home/faq/FaqSection";
+import AboutSection from '../components/home/landing/AboutSection';
+import EventsSection from '../components/home/landing/EventsSection';
+import WhyChooseUsSection from '../components/home/landing/WhyChooseUsSection';
+import PoolSection from '../components/home/landing/PoolSection';
+import GallerySection from '../components/home/landing/GallerySection';
+import PricingSection from '../components/home/landing/PricingSection';
+import TestimonialsSection from '../components/home/landing/TestimonialsSection';
+import FinalCTASection from '../components/home/landing/FinalCTASection';
+
 export const metadata: Metadata = {
-    title: "Helping Garden Club | Wedding & Party Garden in Jaipur",
+    title: "Helping Garden Club | Luxury Wedding & Event Garden Venue",
     description:
-        "Book our beautiful garden venue in Jaipur for weddings, birthday parties, anniversaries, pool parties and private celebrations. Enjoy a spacious outdoor venue with a swimming pool.",
+        "Book our luxury garden venue for weddings, birthday parties, anniversaries, swimming pool bashes and private celebrations. Enjoy spacious outdoor lawns with a swimming pool.",
 
     keywords:
-        "wedding garden Jaipur, garden booking Jaipur, birthday party venue Jaipur, anniversary party venue Jaipur, wedding venue Jaipur, swimming pool party Jaipur, party garden Jaipur, garden for rent Jaipur",
+        "wedding garden, garden booking venue, birthday party garden, anniversary venue, swimming pool party venue, luxury party garden, event venue for rent",
 
     openGraph: {
-        title: "Helping Garden Club | Wedding & Party Garden in Jaipur",
+        title: "Helping Garden Club | Luxury Wedding & Event Garden Venue",
         description:
-            "A beautiful garden venue for weddings, birthdays, anniversaries, pool parties and private celebrations in Jaipur.",
+            "A luxury garden venue for weddings, birthdays, anniversaries, pool parties and private celebrations.",
         images: ["/images/HeroGarden.jpg"],
         type: "website",
     },
@@ -26,15 +29,20 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <main className="w-full min-h-screen">
+        <main className="w-full min-h-screen overflow-x-hidden">
+            {/* Existing Hero Section */}
             <HeroSection />
             <OccasionBannerSlider />
-            {/* <DestinationsGrid />
+
+            {/* NEW Landing Page Sections */}
+            <AboutSection />
+            <EventsSection />
+            <WhyChooseUsSection />
+            <PoolSection />
             <GallerySection />
-            <ReviewsSection />
-            <ProcessSection />
-            <WhyChooseUs />
-            <FaqSection /> */}
+            <PricingSection />
+            <TestimonialsSection />
+            <FinalCTASection />
         </main>
     );
 }

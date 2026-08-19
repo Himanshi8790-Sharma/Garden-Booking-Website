@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -7,95 +6,110 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface Props {
-    onVideoReady: () => void;
-    videoReady: boolean;
+  onVideoReady: () => void;
+  videoReady: boolean;
 }
 
 export default function HeroBackground({
-    onVideoReady,
-    videoReady,
+  onVideoReady,
+  videoReady,
 }: Props) {
-    const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+    }
 
-        const video = videoRef.current;
-        if (!video) return;
+    const video = videoRef.current;
+    const wrapper = wrapperRef.current;
+    if (!video || !wrapper) return;
 
-        video.src = "/images/wedding.mp4";
-        video.load();
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        const handleCanPlay = () => {
-            onVideoReady();
+    video.src = "/images/wedding.mp4";
+    video.load();
 
-            if (!document.hidden) {
-                video.play().catch((error) => {
-                    console.log("Video autoplay failed:", error);
-                });
-            }
-        };
+    const handleCanPlay = () => {
+      onVideoReady();
+      if (!document.hidden) {
+        video.play().catch(() => {});
+      }
+    };
 
-        video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("canplay", handleCanPlay);
 
-        const section = video.closest("section");
+    const section = wrapper.closest("section");
 
-        let trigger: ScrollTrigger | null = null;
+    const ctx = gsap.context(() => {
+      if (!prefersReducedMotion && section) {
+        // Initial Cinematic Scale Entrance
+        gsap.fromTo(
+          wrapper,
+          { scale: 1.16 },
+          { scale: 1, duration: 2.2, ease: "power3.out" }
+        );
 
-        if (section) {
-            trigger = ScrollTrigger.create({
-                trigger: section,
-                start: "top bottom",
-                end: "bottom top",
+        // Scroll Parallax Scrub
+        gsap.to(wrapper, {
+          yPercent: 14,
+          scale: 1.08,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
 
-                onEnter: () => {
-                    video.play().catch(() => {});
-                },
+      if (section) {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          onEnter: () => video.play().catch(() => {}),
+          onEnterBack: () => video.play().catch(() => {}),
+          onLeave: () => video.pause(),
+          onLeaveBack: () => video.pause(),
+        });
+      }
+    }, wrapperRef);
 
-                onEnterBack: () => {
-                    video.play().catch(() => {});
-                },
+    return () => {
+      video.pause();
+      video.removeEventListener("canplay", handleCanPlay);
+      ctx.revert();
+    };
+  }, [onVideoReady]);
 
-                onLeave: () => {
-                    video.pause();
-                },
+  return (
+    <div ref={wrapperRef} className="absolute inset-0 w-full h-full z-0 overflow-hidden">
+      <Image
+        src="/images/HeroGarden.jpg"
+        alt="Helping Garden Club Hero Background"
+        fill
+        priority
+        sizes="100vw"
+        className="z-0 object-cover"
+      />
 
-                onLeaveBack: () => {
-                    video.pause();
-                },
-            });
-        }
-
-        return () => {
-            video.pause();
-            video.removeEventListener("canplay", handleCanPlay);
-            trigger?.kill();
-        };
-    }, [onVideoReady]);
-
-    return (
-        <>
-            <Image
-                src="/images/HeroGarden.jpg"
-                alt="Jodha Holidays Hero Background"
-                fill
-                priority
-                sizes="100vw"
-                className="z-0 object-cover"
-            />
-
-            <video
-                ref={videoRef}
-                muted
-                loop
-                playsInline
-                preload="auto"
-                className="absolute inset-0 z-10 h-full w-full object-cover"
-                style={{
-                    opacity: videoReady ? 1 : 0,
-                    transition: "opacity 0.5s ease-in-out",
-                }}
-            />
-        </>
-    );
+      <video
+        ref={videoRef}
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 z-10 h-full w-full object-cover"
+        style={{
+          opacity: videoReady ? 1 : 0,
+          transition: "opacity 0.7s ease-in-out",
+        }}
+      />
+    </div>
+  );
 }

@@ -6,17 +6,37 @@
 }
 
 :root {
-  --background: #FAF9F6;
-  --foreground: #0f172a;
+  --primary: #12372A;              /* Deep forest green */
+  --primary-dark: #091F16;         /* Dark emerald / night forest */
+  --primary-light: #2D6A4F;        /* Vibrant sage / lush green */
+  --secondary: #435240;            /* Natural muted moss green */
+  --accent: #C5A059;               /* Warm muted gold */
+  --accent-light: #E5C583;         /* Soft gold shimmer */
+  --background: #FAF8F5;           /* Soft cream / ivory */
+  --background-secondary: #F2EDE4; /* Subtle warm stone */
+  --background-dark: #0D1612;      /* Midnight forest dark section */
+  --foreground: #1A241F;           /* Deep dark charcoal/green text */
+  --foreground-muted: #5A6960;     /* Muted slate text */
+  --muted: #8E9B90;                /* Subdued natural border/text */
+  --border: #E2DBD0;               /* Delicate ivory/stone border */
+  --border-dark: #223329;          /* Dark section border */
+  --card: #FFFFFF;                 /* Pure white card */
+  --card-dark: #14231B;            /* Dark luxury card */
+  --overlay: rgba(13, 24, 18, 0.65); /* Rich dark gradient overlay */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-/* Explicit overrides to guarantee Google Fonts load instead of Arial/Georgia fallbacks */
+/* Explicit overrides to guarantee Google Fonts load instead of fallbacks */
 .font-sans {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif !important;
 }
@@ -33,3 +53,26 @@ body {
 .text-shadow-md {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
 }
+
+/* Theme helper classes */
+.bg-primary { background-color: var(--primary); }
+.bg-primary-dark { background-color: var(--primary-dark); }
+.bg-primary-light { background-color: var(--primary-light); }
+.bg-accent { background-color: var(--accent); }
+.bg-accent-light { background-color: var(--accent-light); }
+.bg-surface { background-color: var(--background); }
+.bg-surface-secondary { background-color: var(--background-secondary); }
+.bg-surface-dark { background-color: var(--background-dark); }
+.bg-card-custom { background-color: var(--card); }
+.bg-card-dark { background-color: var(--card-dark); }
+
+.text-primary-custom { color: var(--primary); }
+.text-primary-dark { color: var(--primary-dark); }
+.text-accent-custom { color: var(--accent); }
+.text-accent-light { color: var(--accent-light); }
+.text-main { color: var(--foreground); }
+.text-muted-custom { color: var(--foreground-muted); }
+
+.border-theme { border-color: var(--border); }
+.border-theme-dark { border-color: var(--border-dark); }
+.border-accent-custom { border-color: var(--accent); }
