@@ -18,28 +18,28 @@ interface FeatureHighlight {
 
 const keyHighlights: FeatureHighlight[] = [
   {
-    title: "Spacious Outdoor Garden",
-    desc: "Over 12,000 sq. ft. of manicured green lawns framed by lush tropical foliage and floral canopy paths.",
+    title: "Spacious Garden",
+    desc: "12,000+ sq. ft. of lush outdoor space.",
   },
   {
-    title: "Weddings & Grand Receptions",
-    desc: "Fairytale open-air wedding venue setups with customizable mandaps, stage lighting, and starlit banquets.",
+    title: "Weddings & Receptions",
+    desc: "Beautiful settings for your special day.",
   },
   {
-    title: "Birthday & Anniversary Parties",
-    desc: "Vibrant outdoor celebrations and romantic milestone gatherings tailored to your personal style.",
+    title: "Birthdays & Anniversaries",
+    desc: "Celebrate every milestone in style.",
   },
   {
-    title: "Refreshing Swimming Pool",
-    desc: "Crystal-clear private swimming pool area ideal for poolside cocktail soirees and sunny day bashes.",
+    title: "Swimming Pool",
+    desc: "Perfect for relaxed poolside gatherings.",
   },
   {
-    title: "Family & Private Events",
-    desc: "Complete venue privacy for intimate family reunions, cocktail mixers, and exclusive corporate events.",
+    title: "Private Events",
+    desc: "A comfortable space for family and friends.",
   },
   {
-    title: "Flexible Outdoor Celebration Space",
-    desc: "Modular arrangements allowing customized seating, catering stations, music, and decorative setups.",
+    title: "Flexible Setup",
+    desc: "Create the celebration you have imagined.",
   },
 ];
 
@@ -59,11 +59,15 @@ export default function AboutSection() {
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      // 1. Heading Masked Unmask Reveal
+      // Heading reveal
       if (headingRef.current) {
         gsap.fromTo(
           headingRef.current,
-          { opacity: 0, y: 40, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+          {
+            opacity: 0,
+            y: 40,
+            clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+          },
           {
             opacity: 1,
             y: 0,
@@ -74,14 +78,17 @@ export default function AboutSection() {
               trigger: sectionRef.current,
               start: "top 75%",
             },
-          }
+          },
         );
       }
 
-      // 2. Text & highlights staggered reveal
+      // Content reveal
       gsap.fromTo(
         [textRef.current, statsRef.current],
-        { opacity: 0, y: 35 },
+        {
+          opacity: 0,
+          y: 35,
+        },
         {
           opacity: 1,
           y: 0,
@@ -92,10 +99,10 @@ export default function AboutSection() {
             trigger: textRef.current,
             start: "top 80%",
           },
-        }
+        },
       );
 
-      // 3. Main Image Clip-Path Unmasking
+      // Main image reveal
       if (imageMainRef.current) {
         gsap.fromTo(
           imageMainRef.current,
@@ -114,15 +121,19 @@ export default function AboutSection() {
               trigger: imageMainRef.current,
               start: "top 80%",
             },
-          }
+          },
         );
       }
 
-      // 4. Secondary Floating Image Parallax Shift
+      // Floating image reveal
       if (imageSubRef.current && sectionRef.current) {
         gsap.fromTo(
           imageSubRef.current,
-          { opacity: 0, y: 60, scale: 0.92 },
+          {
+            opacity: 0,
+            y: 60,
+            scale: 0.92,
+          },
           {
             opacity: 1,
             scale: 1,
@@ -133,10 +144,10 @@ export default function AboutSection() {
               trigger: imageSubRef.current,
               start: "top 85%",
             },
-          }
+          },
         );
 
-        // Continuous parallax scrub on scroll
+        // Parallax
         gsap.to(imageSubRef.current, {
           y: -45,
           ease: "none",
@@ -157,56 +168,67 @@ export default function AboutSection() {
     <section
       ref={sectionRef}
       id="about"
-      aria-label="About Our Garden Venue"
-      className="relative w-full py-28 px-6 md:px-12 lg:px-20 bg-[var(--background)] overflow-hidden border-b border-[var(--border)]"
+      aria-label="About Helping Garden Club"
+      className="relative w-full py-20 md:py-24 lg:py-28 px-6 md:px-12 lg:px-20 bg-(--background) overflow-hidden  border-b border-(--border)"
     >
-      {/* Soft Background Accent Orb */}
+      {/* Background Accent */}
       <div
-        className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--primary-light)]/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-0 right-0 w-100 h-100 md:w-125 md:h-125 bg-(--primary-light)/5 rounded-full blur-3xl pointer-events-none "
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        {/* Left Column: Content */}
+      {/* Main Container */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ">
+        {/* =========================================
+            LEFT CONTENT
+        ========================================== */}
         <div className="lg:col-span-6 flex flex-col justify-center">
-          <div ref={headingRef} className="flex flex-col items-start overflow-hidden">
-            <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)] font-semibold mb-3 px-3.5 py-1 bg-[var(--accent)]/10 rounded-full border border-[var(--accent)]/20 font-sans">
-              About Our Venue
+          {/* Heading */}
+          <div
+            ref={headingRef}
+            className="flex flex-col items-start overflow-hidden"
+          >
+            {/* Eyebrow */}
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-(--accent) font-semibold mb-4 px-3.5 py-1.5 bg-(--accent)/10 rounded-full border border-(--accent)/20 font-sans ">
+              About Helping Garden Club
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[var(--foreground)] leading-[1.15] font-normal">
-              An Extraordinary <br />
-              <span className="italic font-light text-[var(--primary)]">
-                Garden &amp; Event Venue
-              </span>{" "}
-              For Life&apos;s Milestones
+
+            {/* Main Heading */}
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-serif text-(--foreground) leading-[1.05] font-normal">
+              Where Beautiful
+              <br />
+              <span className="italic font-light text-(--primary)">
+                Moments Begin
+              </span>
             </h2>
           </div>
 
+          {/* Description */}
           <div
             ref={textRef}
-            className="mt-6 text-[var(--foreground-muted)] space-y-4 text-base md:text-lg leading-relaxed font-sans font-light"
+            className="mt-7 text-(--foreground-muted) text-base md:text-lg leading-relaxed font-sans font-light "
           >
-            <p>
-              Welcome to our premier <strong>garden venue</strong>, a serene sanctuary thoughtfully designed for hosting extraordinary <strong>outdoor celebrations</strong> and <strong>private events</strong>. Nestled within lush green surroundings, our property offers the ideal setting whether you are searching for an enchanting <strong>wedding venue</strong> or a versatile space for milestone celebrations.
-            </p>
-            <p>
-              From fairytale weddings and glamorous receptions to energetic <strong>birthday parties</strong>, romantic <strong>anniversary celebrations</strong>, and refreshing <strong>swimming pool</strong> bashes, our dedicated event venue elevates every occasion into an unforgettable memory.
+            <p className="max-w-2xl">
+              Surrounded by lush greenery and open skies, Helping Garden Club
+              offers an elegant setting for weddings, birthdays, anniversaries,
+              poolside gatherings, and private celebrations.
             </p>
 
-            {/* Key Feature Highlights Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            {/* Feature Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-7">
               {keyHighlights.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-3 p-3.5 rounded-2xl bg-[var(--background-secondary)] border border-[var(--border)] transition-all duration-300 hover:border-[var(--accent)]/50 hover:shadow-md"
+                  className="group flex items-start gap-3 p-3.5 rounded-2xl bg-(--background-secondary) border border-(--border) transition-all duration-300 hover:border-(--accent)/50 hover:shadow-md"
                 >
-                  <FiCheckCircle className="text-[var(--accent)] text-lg flex-shrink-0 mt-0.5" />
+                  <FiCheckCircle className="text-(--accent) text-lg shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-110 " />
+
                   <div>
-                    <h3 className="text-xs font-sans font-semibold text-[var(--foreground)] uppercase tracking-wider">
+                    <h3 className="text-xs font-sans font-semibold text-(--foreground) uppercase tracking-wider ">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-[var(--foreground-muted)] font-sans font-light mt-0.5 leading-snug">
+
+                    <p className="text-xs text-(--foreground-muted) font-sans font-light mt-1 leading-snug ">
                       {item.desc}
                     </p>
                   </div>
@@ -215,99 +237,120 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Venue Statistics & Action Button */}
+          {/* =========================================
+              STATS + CTA
+          ========================================== */}
           <div
             ref={statsRef}
-            className="mt-10 pt-8 border-t border-[var(--border)] flex flex-wrap items-center justify-between gap-6"
+            className="mt-9 pt-7 border-t border-(--border) flex flex-wrap items-center justify-between gap-6 "
           >
-            <div className="flex items-center gap-8">
+            {/* Stats */}
+            <div className="flex items-center gap-7 sm:gap-9">
+              {/* Lawn */}
               <div>
-                <p className="text-3xl sm:text-4xl font-serif font-semibold text-[var(--primary)]">
+                <p className="text-3xl sm:text-4xl font-serif font-semibold text-(--primary) ">
                   12,000+
                 </p>
-                <p className="text-xs uppercase tracking-wider text-[var(--foreground-muted)] font-sans">
-                  Sq. Ft. Outdoor Lawn
+
+                <p className="text-[10px] sm:text-xs uppercase tracking-wider text-(--foreground-muted) font-sans  mt-1">
+                  Sq. Ft. Lawn
                 </p>
               </div>
-              <div
-                className="w-px h-10 bg-[var(--border)]"
-                aria-hidden="true"
-              />
+
+              {/* Divider */}
+              <div className="w-px h-10 bg-(--border)" aria-hidden="true" />
+
+              {/* Capacity */}
               <div>
-                <p className="text-3xl sm:text-4xl font-serif font-semibold text-[var(--accent)]">
+                <p className="text-3xl sm:text-4xl font-serif font-semibold text-(--accent) ">
                   500+
                 </p>
-                <p className="text-xs uppercase tracking-wider text-[var(--foreground-muted)] font-sans">
+
+                <p className="text-[10px] sm:text-xs uppercase tracking-wider text-(--foreground-muted) font-sans mt-1 ">
                   Guest Capacity
                 </p>
               </div>
             </div>
 
+            {/* CTA */}
             <Link
               href="#events"
-              className="px-6 py-3.5 bg-[var(--primary)] text-white font-sans text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-[var(--primary-dark)] transition-all duration-300 flex items-center gap-2 shadow-lg shadow-[var(--primary)]/15 hover:shadow-xl active:scale-95 cursor-pointer"
+              className="px-6 py-3.5 bg-(--primary) text-white font-text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-(--primary-dark) transition-all duration-300 flex items-center gap-2 shadow-lg shadow-(--primary)/15 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 cursor-pointer "
             >
-              <span>Explore Event Types</span>
-              <FiArrowRight />
+              <span>Explore Events</span>
+              <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
 
-        {/* Right Column: Visual Layout with Clip-Path & Parallax */}
-        <div className="lg:col-span-6 relative flex flex-col items-center lg:items-end">
-          {/* Main Image with Clip-Path Unmasking */}
+        {/* =========================================
+            RIGHT VISUALS
+        ========================================== */}
+        <div className="lg:col-span-6 relative flex flex-col items-center lg:items-end mt-4 lg:mt-0 ">
+          {/* Main Image */}
           <div
             ref={imageMainRef}
-            className="relative w-full max-w-lg lg:max-w-none h-[400px] sm:h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-[var(--card)] group"
+            className="relative w-full max-w-lg lg:max-w-none h-95 sm:h-120 lg:h-140 rounded-4xl overflow-hidden shadow-2xl border-4 border-(--card) group"
           >
             <Image
               src="/images/garden.webp"
-              alt="Lush outdoor garden venue manicured lawn and floral pathways"
+              alt="Lush outdoor garden venue at Helping Garden Club"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 "
             />
+
+            {/* Image Overlay */}
             <div
-              className="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/70 via-transparent to-transparent opacity-80"
+              className="absolute inset-0 bg-linear-to-t from-(--primary-dark)/75 via-transparent to-transparent "
               aria-hidden="true"
             />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
-              <span className="text-xs uppercase tracking-widest text-[var(--accent-light)] font-sans font-medium">
-                Manicured Lawns
+
+            {/* Image Text */}
+            <div className="absolute bottom-7 left-7 right-7 text-white">
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-(--accent-light) font-sans font-medium ">
+                The Garden
               </span>
-              <p className="text-xl font-serif font-normal text-white mt-0.5">
-                Lush Outdoor Garden &amp; Floral Canopy
+
+              <p className="text-xl sm:text-2xl font-serif font-normal text-white mt-1 ">
+                A Beautiful Space to Celebrate
               </p>
             </div>
           </div>
 
-          {/* Secondary Inset Image with Parallax Scrub */}
+          {/* =========================================
+              FLOATING SECOND IMAGE
+          ========================================== */}
           <div
             ref={imageSubRef}
-            className="relative lg:absolute -bottom-10 lg:-left-6 w-full sm:w-[280px] h-[200px] mt-6 lg:mt-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-[var(--card)] bg-[var(--card)] z-10 group"
+            className="relative lg:absolute -bottom-10 lg:-left-8 w-full sm:w-70 h-47.5 sm:h-50 mt-5 lg:mt-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-(--card) bg-(--card) z-10 group"
           >
             <Image
               src="/assets/welcome_palace.webp"
-              alt="Royal heritage event venue entryway and celebration setup"
+              alt="Elegant event decor and celebration setup"
               fill
               sizes="(max-width: 640px) 100vw, 280px"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 "
             />
+
+            {/* Overlay */}
             <div
-              className="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/80 via-transparent to-transparent"
+              className="absolute inset-0 bg-linear-to-t from-(--primary-dark)/80 via-transparent to-transparent "
               aria-hidden="true"
             />
-            <div className="absolute bottom-3 left-4 text-white">
-              <span className="text-[10px] uppercase tracking-wider text-[var(--accent-light)] font-sans font-semibold">
-                Event Decor
+
+            {/* Text */}
+            <div className="absolute bottom-4 left-5 text-white">
+              <span className="text-[9px] uppercase tracking-[0.2em] text-(--accent-light) font-sans font-semibold">
+                Celebrate in Style
               </span>
-              <p className="text-sm font-serif font-light text-white">
-                Elegant Decor &amp; Stage Setups
+
+              <p className="text-sm font-serif font-light text-white mt-0.5">
+                Elegant Decor & Setups
               </p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -70,7 +70,7 @@ export default function PoolSection() {
     <section
       ref={sectionRef}
       aria-label="Swimming Pool Experience Section"
-      className="relative w-full min-h-[580px] lg:min-h-[660px] flex items-center justify-center overflow-hidden bg-black text-white"
+      className="relative w-full min-h-145 lg:min-h-165 flex items-center justify-center overflow-hidden bg-black text-white"
     >
       {/* Background Image Container with Parallax Scale */}
       <div ref={bgImageRef} className="absolute inset-0 w-full h-full">
@@ -84,7 +84,7 @@ export default function PoolSection() {
         />
         {/* Layered Dark Overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-r from-[var(--primary-dark)]/90 via-[var(--primary-dark)]/75 to-black/85"
+          className="absolute inset-0 bg-linear-to-r from-(--primary-dark)/90 via-(--primary-dark)/75 to-black/85"
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
@@ -96,7 +96,7 @@ export default function PoolSection() {
         aria-hidden="true"
       />
       <div
-        className="absolute -bottom-24 right-1/4 w-96 h-96 bg-[var(--accent)]/15 rounded-full blur-[110px] pointer-events-none"
+        className="absolute -bottom-24 right-1/4 w-96 h-96 bg-(--accent)/15 rounded-full blur-[110px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -138,7 +138,7 @@ export default function PoolSection() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="#booking"
-            className="px-8 py-4 bg-[var(--accent)] text-black font-sans text-xs uppercase tracking-widest font-bold rounded-full hover:bg-[var(--accent-light)] transition-all duration-300 flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 cursor-pointer"
+            className="px-8 py-4 bg-(--accent) text-black font-sans text-xs uppercase tracking-widest font-bold rounded-full hover:bg-(--accent-light) transition-all duration-300 flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 cursor-pointer"
           >
             <span>Book Pool</span>
             <FiArrowRight className="text-base" />

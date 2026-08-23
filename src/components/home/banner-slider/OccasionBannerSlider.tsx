@@ -59,7 +59,7 @@ export default function OccasionBannerSlider() {
             className="w-full bg-[#FAF9F6] py-16 px-6 md:px-12 flex justify-center"
         >
             {/* Main Outer Banner wrapper */}
-            <div className="w-full max-w-7xl overflow-hidden rounded-[2rem] shadow-xl relative h-[210px] md:h-[260px] bg-slate-950">
+            <div className="w-full max-w-7xl overflow-hidden rounded-4xl shadow-xl relative h-52.5 md:h-65 bg-slate-950">
 
                 {/* Sliding Track (500% width) */}
                 <div

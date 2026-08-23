@@ -58,10 +58,10 @@ export default function FinalCTASection() {
       aria-label="Final Call To Action"
       className="w-full py-24 px-6 md:px-12 lg:px-20 bg-[var(--background)] relative overflow-hidden"
     >
-      <div
-        ref={containerRef}
-        className="max-w-7xl mx-auto rounded-[2.5rem] relative overflow-hidden bg-gradient-to-br from-[var(--primary-dark)] via-[#0C2217] to-black text-white shadow-2xl p-10 sm:p-16 lg:p-20 border border-[var(--accent)]/30"
-      >
+     <div
+  ref={containerRef}
+  className="max-w-7xl mx-auto rounded-[2.5rem] relative overflow-hidden bg-gradient-to-br from-[var(--primary-dark)] via-[#0F2D20] to-[var(--primary-dark)] text-white shadow-2xl p-10 sm:p-16 lg:p-20 border border-[var(--accent)]/30"
+>
         {/* Background CTA Image with Mask */}
         <div className="absolute inset-0 z-0 opacity-25 mix-blend-overlay pointer-events-none">
           <Image

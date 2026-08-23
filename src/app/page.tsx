@@ -30,11 +30,8 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <main className="w-full min-h-screen overflow-x-hidden">
-            {/* Existing Hero Section */}
             <HeroSection />
             <OccasionBannerSlider />
-
-            {/* NEW Landing Page Sections */}
             <AboutSection />
             <EventsSection />
             <WhyChooseUsSection />

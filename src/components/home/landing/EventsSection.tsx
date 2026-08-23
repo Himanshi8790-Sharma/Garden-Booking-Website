@@ -128,22 +128,22 @@ export default function EventsSection() {
       ref={sectionRef}
       id="events"
       aria-label="Tailored Event Occasions"
-      className="w-full py-28 px-6 md:px-12 lg:px-20 bg-[var(--background-secondary)] border-b border-[var(--border)] relative"
+      className="w-full py-28 px-6 md:px-12 lg:px-20 bg-(--background-secondary) border-b border-(--border) relative"
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
         {/* Section Header */}
         <div className="events-header text-center max-w-2xl flex flex-col items-center">
-          <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)] font-semibold px-3.5 py-1 bg-[var(--accent)]/10 rounded-full border border-[var(--accent)]/20 mb-3 font-sans">
+          <span className="text-xs uppercase tracking-[0.25em] text-(--accent) font-semibold px-3.5 py-1 bg-(--accent)/10 rounded-full border border-(--accent)/20 mb-3 font-sans">
             Tailored Occasions
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[var(--foreground)] leading-tight font-normal">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-(--foreground) leading-tight font-normal">
             Bespoke Celebrations <br />
-            <span className="italic font-light text-[var(--primary)]">
+            <span className="italic font-light text-(--primary)">
               For Every Milestone
             </span>
           </h2>
-          <p className="mt-4 text-[var(--foreground-muted)] font-sans font-light text-base md:text-lg">
+          <p className="mt-4 text-(--foreground-muted) font-sans font-light text-base md:text-lg">
             Whether planning an intimate family gathering or a lavish wedding reception, our versatile garden venue transforms to match your vision.
           </p>
         </div>
@@ -156,7 +156,7 @@ export default function EventsSection() {
               ref={(el) => {
                 if (el) cardsRef.current[index] = el;
               }}
-              className="group relative rounded-3xl overflow-hidden bg-[var(--card)] shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col h-[430px] border border-[var(--border)] hover:border-[var(--accent)]/50 cursor-pointer"
+              className="group relative rounded-3xl overflow-hidden bg-(--card) shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col h-107.5 border border-(--border) hover:border-(--accent)/50 cursor-pointer"
             >
               {/* Card Image Container */}
               <div className="relative w-full h-[62%] overflow-hidden">
@@ -169,15 +169,15 @@ export default function EventsSection() {
                 />
                 
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/90 via-[var(--primary-dark)]/30 to-transparent transition-opacity duration-500 group-hover:opacity-90"
+                  className="absolute inset-0 bg-linear-to-t from-(--primary-dark)/90 via-(--primary-dark)/30 to-transparent transition-opacity duration-500 group-hover:opacity-90"
                   aria-hidden="true"
                 />
                 
-                <span className="absolute top-4 left-4 text-[10px] uppercase tracking-widest bg-[var(--primary-dark)]/70 text-[var(--accent-light)] px-3 py-1 rounded-full backdrop-blur-md border border-white/10 font-semibold font-sans">
+                <span className="absolute top-4 left-4 text-[10px] uppercase tracking-widest bg-(--primary-dark)/70 text-(--accent-light) px-3 py-1 rounded-full backdrop-blur-md border border-white/10 font-semibold font-sans">
                   {item.tag}
                 </span>
 
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all duration-500 group-hover:bg-[var(--accent)] group-hover:text-black group-hover:rotate-45">
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all duration-500 group-hover:bg-(--accent)group-hover:text-black group-hover:rotate-45">
                   <FiArrowUpRight className="text-lg" />
                 </div>
 
@@ -185,25 +185,25 @@ export default function EventsSection() {
                   <h3 className="text-xl font-serif text-white font-normal leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[var(--accent-light)] font-sans font-light tracking-wide mt-0.5">
+                  <p className="text-xs text-(--accent-light) font-sans font-light tracking-wide mt-0.5">
                     {item.subtitle}
                   </p>
                 </div>
               </div>
 
               {/* Card Content Footer */}
-              <div className="p-6 flex flex-col justify-between flex-1 bg-[var(--card)]">
-                <p className="text-xs sm:text-sm text-[var(--foreground-muted)] font-sans font-light leading-relaxed line-clamp-2">
+              <div className="p-6 flex flex-col justify-between flex-1 bg-(--card)">
+                <p className="text-xs sm:text-sm text-(--foreground-muted) font-sans font-light leading-relaxed line-clamp-2">
                   {item.description}
                 </p>
 
-                <div className="pt-3 flex items-center justify-between border-t border-[var(--border)] mt-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[var(--primary)] group-hover:text-[var(--accent)] transition-colors duration-300 font-sans">
+                <div className="pt-3 flex items-center justify-between border-t border-(--border) mt-2">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-(--primary) group-hover:text-(--accent) transition-colors duration-300 font-sans">
                     Book Event Space
                   </span>
                   <Link
                     href="#booking"
-                    className="text-xs font-sans text-[var(--foreground-muted)] group-hover:text-[var(--foreground)] transition-colors flex items-center gap-1 font-medium"
+                    className="text-xs font-sans text-(--foreground-muted) group-hover:text-(--foreground) transition-colors flex items-center gap-1 font-medium"
                   >
                     Details &rarr;
                   </Link>

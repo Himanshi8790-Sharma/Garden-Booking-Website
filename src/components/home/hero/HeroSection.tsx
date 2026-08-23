@@ -94,10 +94,10 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen max-h-[900px] bg-black overflow-hidden flex flex-col justify-between"
+      className="relative w-full h-screen max-h-225 bg-black overflow-hidden flex flex-col justify-between"
     >
       {/* Subtle dark overlay over background */}
-      <div className="absolute inset-0 bg-black/30 z-[15] pointer-events-none" />
+      <div className="absolute inset-0 bg-black/30 z-15 pointer-events-none" />
 
       {/* Background elements with scale & parallax */}
       <HeroBackground

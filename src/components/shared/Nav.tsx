@@ -105,14 +105,14 @@ export default function Nav({ wrapperRef, onLinkClick }: Props) {
                 })}
             </div>
 
-            {/* Watermark 'JODHA' (very light, half cut off at the bottom) */}
+            {/* Watermark ' (very light, half cut off at the bottom) */}
             <div
                 ref={watermarkRef}
                 className="absolute bottom-0 left-0 right-0 h-[15vw] sm:h-[4.5rem] overflow-hidden pointer-events-none select-none z-0"
                 style={{ opacity: 0 }}
             >
                 <span className="absolute top-0 left-0 right-0 text-8xl sm:text-[7.2rem] font-serif italic font-light text-[#0f172a]/[0.05] leading-none tracking-normal block text-center select-none whitespace-nowrap">
-                    JODHA
+                    Garden
                 </span>
             </div>
         </div>
