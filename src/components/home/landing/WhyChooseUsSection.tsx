@@ -29,8 +29,8 @@ const features: FeatureItem[] = [
     icon: FiSun,
     title: "Beautiful Outdoor Space",
     description:
-      "12,000+ sq. ft. of lush lawns surrounded by natural greenery — perfect for elegant daytime celebrations and magical evenings.",
-    highlight: "12,000+ Sq Ft Lawn",
+      "3600+ sq. ft. of lush lawns surrounded by natural greenery — perfect for elegant daytime celebrations and magical evenings.",
+    highlight: "3600+ Sq Ft Lawn",
   },
   {
     icon: FiDroplet,

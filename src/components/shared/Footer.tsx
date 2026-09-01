@@ -33,7 +33,7 @@ export default function Footer() {
                 {/* Row 3: Copyright Bar */}
                 <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-sans text-slate-400 uppercase tracking-widest">
                     <span>
-                        &copy; {new Date().getFullYear()} Jodha Holidays. All rights reserved.
+                        &copy; {new Date().getFullYear()} Helping  Garden CLub. All rights reserved.
                     </span>
                     <div className="flex gap-6">
                         <Link href="/privacy" className="hover:text-slate-400 transition-colors">Privacy Policy</Link>

@@ -98,7 +98,7 @@ export default function HeroBackground({
         className="z-0 object-cover"
       />
 
-      <video
+      {/* <video
         ref={videoRef}
         muted
         loop
@@ -109,7 +109,7 @@ export default function HeroBackground({
           opacity: videoReady ? 1 : 0,
           transition: "opacity 0.7s ease-in-out",
         }}
-      />
+      /> */}
     </div>
   );
 }

@@ -19,7 +19,7 @@ interface FeatureHighlight {
 const keyHighlights: FeatureHighlight[] = [
   {
     title: "Spacious Garden",
-    desc: "12,000+ sq. ft. of lush outdoor space.",
+    desc: "3600+ sq. ft. of lush outdoor space.",
   },
   {
     title: "Weddings & Receptions",
@@ -249,7 +249,7 @@ export default function AboutSection() {
               {/* Lawn */}
               <div>
                 <p className="text-3xl sm:text-4xl font-serif font-semibold text-(--primary) ">
-                  12,000+
+                  3600+
                 </p>
 
                 <p className="text-[10px] sm:text-xs uppercase tracking-wider text-(--foreground-muted) font-sans  mt-1">

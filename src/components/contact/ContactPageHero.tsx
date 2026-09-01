@@ -51,7 +51,7 @@ export default function ContactPageHero() {
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/contact_cta_bg_desktop.webp"
+          src="/image/heromain.png"
           alt="Helping Garden Club Venue Ambiance"
           fill
           priority

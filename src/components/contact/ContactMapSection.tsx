@@ -47,7 +47,7 @@ export default function ContactMapSection() {
     <section
       ref={sectionRef}
       aria-label="Venue Location Map"
-      className="w-full py-24 px-6 md:px-12 lg:px-20 bg-[var(--background-secondary)] border-b border-[var(--border)] relative"
+      className="w-full py-10 px-6 md:px-12  bg-[var(--background-secondary)] border-b border-[var(--border)] relative"
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         

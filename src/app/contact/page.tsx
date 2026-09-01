@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Contact Us | Helping Garden Club - Jaipur Garden & Event Venue",
     description:
       "Contact Helping Garden Club to book our beautiful garden venue for weddings, birthdays, anniversaries, private parties, and pool events in Jaipur.",
-    images: ["/images/garden.webp"],
+    images: ["/image/heromain.png"],
     type: "website",
   },
 };
@@ -51,7 +51,7 @@ export default function ContactPage() {
       <ContactEnquiryForm />
 
       {/* 5. Visual Section */}
-      <ContactVisualSection />
+      {/* <ContactVisualSection /> */}
 
       {/* 6. Reassurance / Why Contact Us */}
       {/* <ContactReassurance /> */}

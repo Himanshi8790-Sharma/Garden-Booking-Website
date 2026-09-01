@@ -19,12 +19,19 @@ export default function FooterBrand() {
 
     return (
         <div className="md:col-span-4 flex flex-col items-start gap-4">
-            <Link href="/" aria-label="Jodha Holidays home" className="font-serif italic font-semibold text-white text-xl tracking-wider hover:text-white/90 transition-colors">
-                Jodha Holidays
-            </Link>
-            <p className="text-xs text-slate-400 font-sans leading-relaxed max-w-sm">
-                Tailoring luxury itineraries, authentic palace hotel bookings, and private driver excursions across Rajasthan&apos;s historic cities.
-            </p>
+            <Link
+    href="/"
+    aria-label="Helping Garden Club home"
+    className="font-serif italic font-semibold text-white text-xl tracking-wider hover:text-white/90 transition-colors"
+>
+    Helping Garden Club
+</Link>
+
+<p className="text-xs text-slate-400 font-sans leading-relaxed max-w-sm">
+    A beautiful garden and event venue in Jaipur, perfect for weddings,
+    birthday parties, anniversaries, family celebrations, and memorable
+    special occasions. Swimming pool facilities are also available for booking.
+</p>
 
             <div className="flex gap-2.5 mt-3">
                 {socialItems.map((social, sIdx) => (
