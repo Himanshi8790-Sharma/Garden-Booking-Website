@@ -14,9 +14,9 @@ export const occasionBannerSlides: SlideItem[] = [
         destinations: ["Wedding", "Marriage", "Engagement", "Reception"],
         promo: "Beautiful Outdoor Venue | Spacious Garden & Event Setup",
         images: [
-            "/images/wedding.webp",
-            "/images/garden.webp",
-            "/images/pool.webp",
+            "/image/wedding.jpeg",
+            "/image/swing.jpeg",
+            "/image/swimming.png",
         ],
         whatsappLink:
             "https://wa.me/919799498256?text=Hello!%20I'm%20interested%20in%20booking%20the%20garden%20for%20a%20wedding.",
@@ -28,8 +28,8 @@ export const occasionBannerSlides: SlideItem[] = [
         promo: "Perfect Party Venue | Garden Space & Swimming Pool",
         images: [
             "/images/birthday.webp",
-            "/images/pool.webp",
-            "/images/garden.webp",
+            "/image/swimming.png",
+            "/image/swing.jpeg",
         ],
         whatsappLink:
             "https://wa.me/919799498256?text=Hello!%20I'm%20interested%20in%20booking%20the%20garden%20for%20a%20birthday%20party.",
@@ -40,9 +40,9 @@ export const occasionBannerSlides: SlideItem[] = [
         destinations: ["Anniversary", "Couples", "Family", "Special Moments"],
         promo: "Celebrate Together | Beautiful Garden Setting & Pool",
         images: [
-            "/images/anniversary.webp",
-            "/images/garden.webp",
-            "/images/pool.webp",
+            "/image/anniversary.jpeg",
+            "/image/swing.jpeg",
+            "/image/swimming.png",
         ],
         whatsappLink:
             "https://wa.me/919799498256?text=Hello!%20I'm%20interested%20in%20booking%20the%20garden%20for%20an%20anniversary%20celebration.",
@@ -53,8 +53,8 @@ export const occasionBannerSlides: SlideItem[] = [
         destinations: ["Pool Party", "Friends", "Family", "Weekend Party"],
         promo: "Refresh & Celebrate | Swimming Pool & Garden Venue",
         images: [
-            "/images/pool.webp",
-            "/images/garden.webp",
+            "/image/swimming.png",
+            "/image/swing.jpeg",
             "/images/party.webp",
         ],
         whatsappLink:
@@ -67,8 +67,8 @@ export const occasionBannerSlides: SlideItem[] = [
         promo: "Make It Special | Spacious Garden For Every Occasion",
         images: [
             "/images/party.webp",
-            "/images/garden.webp",
-            "/images/wedding.webp",
+            "/image/swing.jpeg",
+            "/image/wedding.jpeg",
         ],
         whatsappLink:
             "https://wa.me/919799498256?text=Hello!%20I'm%20interested%20in%20booking%20the%20garden%20for%20a%20private%20party%20or%20event.",

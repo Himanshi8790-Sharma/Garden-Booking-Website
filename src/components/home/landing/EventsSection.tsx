@@ -26,7 +26,7 @@ const occasions: EventOccasion[] = [
     title: "Wedding Celebrations",
     subtitle: "Fairytale Open-Air Ceremonies",
     description: "Exchange vows under starry skies and lush canopy foliage with grand banquet setups.",
-    image: "/images/wedding.webp",
+    image: "/image/weddingphoto.jpeg",
     tag: "Most Popular",
   },
   {
@@ -34,7 +34,7 @@ const occasions: EventOccasion[] = [
     title: "Birthday Parties",
     subtitle: "Vibrant Celebrations & Themes",
     description: "Unforgettable birthday bashes with pool access, customized decor, and music setups.",
-    image: "/images/birthday.webp",
+    image: "/image/birthday.jpeg",
     tag: "Festive",
   },
   {
@@ -42,23 +42,24 @@ const occasions: EventOccasion[] = [
     title: "Anniversary Parties",
     subtitle: "Romance & Timeless Memories",
     description: "Intimate candlelit dinners or lavish romantic gatherings with family and friends.",
-    image: "/images/anniversary.webp",
+    image: "/image/anniversary.jpeg",
     tag: "Intimate",
   },
-  {
-    id: "engagements",
-    title: "Engagements & Ring Ceremonies",
-    subtitle: "Begin Your Forever Journey",
-    description: "Charming floral mandaps and elegant lighting created for ring exchange ceremonies.",
-    image: "/images/party.webp",
-    tag: "Charming",
-  },
+ {
+  id: "parties",
+  title: "Birthday & Private Parties",
+  subtitle: "Make Every Celebration Special",
+  description:
+    "Celebrate birthdays, anniversaries, and private parties with beautiful garden spaces, vibrant décor, ambient lighting, and a memorable party setup.",
+  image: "/images/party.webp",
+  tag: "Party Celebrations",
+},
   {
     id: "family",
     title: "Family Celebrations",
     subtitle: "Reunions & Milestone Gatherings",
     description: "Spacious lawn areas with play space for kids, dining gazebos, and relaxing loungers.",
-    image: "/assets/pkg_family.webp",
+    image: "/image/family.jpeg",
     tag: "Gatherings",
   },
   {
@@ -66,7 +67,7 @@ const occasions: EventOccasion[] = [
     title: "Private Events & Pool Parties",
     subtitle: "Exclusive VIP Venue Access",
     description: "Host private pool galas, corporate mixers, or cocktail soirees with private security.",
-    image: "/images/pool.webp",
+    image: "/image/swimming.png",
     tag: "Exclusive",
   },
 ];

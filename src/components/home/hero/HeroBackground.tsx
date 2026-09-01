@@ -90,7 +90,7 @@ export default function HeroBackground({
   return (
     <div ref={wrapperRef} className="absolute inset-0 w-full h-full z-0 overflow-hidden">
       <Image
-        src="/images/HeroGarden.jpg"
+        src="/image/heromain.png"
         alt="Helping Garden Club Hero Background"
         fill
         priority

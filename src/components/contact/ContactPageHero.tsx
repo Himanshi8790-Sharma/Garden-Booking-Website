@@ -46,7 +46,7 @@ export default function ContactPageHero() {
     <section
       ref={heroRef}
       aria-label="Contact Page Hero Banner"
-      className="relative w-full h-[58vh] min-h-[420px] max-h-[560px] bg-[var(--primary-dark)] text-white flex items-center justify-center overflow-hidden"
+      className="relative w-full h-175 bg-[var(--primary-dark)] text-white flex items-center justify-center overflow-hidden"
     >
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">

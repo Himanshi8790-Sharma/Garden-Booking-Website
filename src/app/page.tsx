@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         title: "Helping Garden Club | Luxury Wedding & Event Garden Venue",
         description:
             "A luxury garden venue for weddings, birthdays, anniversaries, pool parties and private celebrations.",
-        images: ["/images/HeroGarden.jpg"],
+        images: ["/images/heromain.png"],
         type: "website",
     },
 };

@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const STARTING_PRICE = "₹47,000";
+const STARTING_PRICE = "₹52,500";
 export default function PricingSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -76,11 +76,11 @@ export default function PricingSection() {
   }, []);
 
   const venueInclusions = [
-    "Main garden venue booking starting from ₹47,000",
+    "Main garden venue booking starting from ₹52,500",
     "Beautiful outdoor space for private celebrations",
     "Ideal for weddings, birthdays & anniversaries",
     "Perfect for parties and special gatherings",
-    "Swimming pool available separately for ₹6,000",
+    "Swimming pool available separately for ₹8,000",
     "Additional event requirements can be discussed",
   ];
 
@@ -146,7 +146,7 @@ export default function PricingSection() {
               </div>
 
               <p className="mt-4 text-xs font-sans text-slate-300 font-light leading-relaxed">
-                *Garden venue pricing starts from ₹47,000. Final pricing may
+                *Garden venue pricing starts from ₹52,500. Final pricing may
                 vary depending on your event type, date, duration, guest
                 requirements, and selected services.
               </p>
@@ -165,7 +165,7 @@ export default function PricingSection() {
 
                 <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10 text-xs font-sans text-slate-200">
                   <FiDroplet className="text(--accent-light) text-base shrink-0" />
-                  <span>Swimming Pool Available Separately — ₹6,000</span>
+                  <span>Swimming Pool Available Separately — ₹8,000</span>
                 </div>
               </div>
 

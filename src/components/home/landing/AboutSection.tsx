@@ -293,7 +293,7 @@ export default function AboutSection() {
             className="relative w-full max-w-lg lg:max-w-none h-95 sm:h-120 lg:h-140 rounded-4xl overflow-hidden shadow-2xl border-4 border-(--card) group"
           >
             <Image
-              src="/images/garden.webp"
+              src="/image/heromain.png"
               alt="Lush outdoor garden venue at Helping Garden Club"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -326,7 +326,7 @@ export default function AboutSection() {
             className="relative lg:absolute -bottom-10 lg:-left-8 w-full sm:w-70 h-47.5 sm:h-50 mt-5 lg:mt-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-(--card) bg-(--card) z-10 group"
           >
             <Image
-              src="/assets/welcome_palace.webp"
+              src="/image/swimming.png"
               alt="Elegant event decor and celebration setup"
               fill
               sizes="(max-width: 640px) 100vw, 280px"

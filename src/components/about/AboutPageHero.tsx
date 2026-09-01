@@ -43,11 +43,11 @@ export default function AboutPageHero() {
   }, []);
 
   return (
-    <section
-      ref={heroRef}
-      aria-label="About Us Hero Banner"
-      className="relative w-full h-[60vh] min-h-[440px] max-h-[600px] bg-[var(--primary-dark)] text-white flex items-center justify-center overflow-hidden"
-    >
+   <section
+  ref={heroRef}
+  aria-label="About Us Hero Banner"
+  className="relative w-full h-175  bg-(--primary-dark) text-white flex items-center justify-center overflow-hidden"
+>
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -58,17 +58,17 @@ export default function AboutPageHero() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--primary-dark)]/90 via-[var(--primary-dark)]/75 to-[var(--background-dark)]" />
+        <div className="absolute inset-0 bg-linear-to-b from-(--primary-dark)/90 via-(--primary-dark)/75 to-(--background-dark)" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Decorative Orbs */}
       <div
-        className="absolute -top-20 -left-20 w-80 h-80 bg-[var(--accent)]/15 rounded-full blur-3xl pointer-events-none"
+        className="absolute -top-20 -left-20 w-80 h-80 bg-(--accent)/15 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute -bottom-20 -right-20 w-96 h-96 bg-[var(--primary-light)]/20 rounded-full blur-3xl pointer-events-none"
+        className="absolute -bottom-20 -right-20 w-96 h-96 bg-(--primary-light)/20 rounded-full blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
@@ -77,12 +77,12 @@ export default function AboutPageHero() {
         {/* Breadcrumb Navigation */}
         <nav
           aria-label="Breadcrumb"
-          className="flex items-center gap-2 text-xs font-sans uppercase tracking-[0.2em] text-[var(--accent-light)] mb-4 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15"
+          className="flex items-center gap-2 text-xs font-sans uppercase tracking-[0.2em] text-(--accent-light) mb-4 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15"
         >
           <Link href="/" className="hover:text-white transition-colors">
             Home
           </Link>
-          <FiChevronRight className="text-xs text-[var(--accent-light)]" />
+          <FiChevronRight className="text-xs text-(--accent-light)" />
           <span className="text-white font-semibold">About Us</span>
         </nav>
 
@@ -91,7 +91,7 @@ export default function AboutPageHero() {
           className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-normal text-white leading-[1.1] tracking-tight"
         >
           Crafting Unforgettable <br />
-          <span className="italic font-light text-[var(--accent-light)]">
+          <span className="italic font-light text-(--accent-light)">
             Outdoor Celebrations
           </span>
         </h1>
@@ -104,7 +104,7 @@ export default function AboutPageHero() {
         </p>
 
         {/* Feature Pill Badge */}
-        <div className="mt-8 inline-flex items-center gap-2 text-xs font-sans font-medium text-[var(--accent-light)] px-4 py-2 rounded-full bg-[var(--primary)]/60 backdrop-blur-md border border-[var(--accent)]/30">
+        <div className="mt-8 inline-flex items-center gap-2 text-xs font-sans font-medium text-(--accent-light) px-4 py-2 rounded-full bg-(--primary)/60 backdrop-blur-md border border-(--accent)/30">
           <FiStar className="text-sm" />
           <span>12,000+ Sq. Ft. Lawn • Swimming Pool • Exclusive Private Events</span>
         </div>

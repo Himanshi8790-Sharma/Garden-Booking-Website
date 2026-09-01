@@ -46,7 +46,7 @@ export default function GalleryPageHero() {
     <section
       ref={heroRef}
       aria-label="Gallery Hero Banner"
-      className="relative w-full h-[60vh] min-h-[440px] max-h-[580px] bg-[var(--primary-dark)] text-white flex items-center justify-center overflow-hidden"
+      className="relative w-full h-175 bg-[var(--primary-dark)] text-white flex items-center justify-center overflow-hidden"
     >
       {/* Background Image with Dark Gradient Mask */}
       <div className="absolute inset-0 z-0">

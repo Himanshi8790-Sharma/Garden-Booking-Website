@@ -806,7 +806,7 @@ const testimonials: Testimonial[] = [
     role: "Bride & Groom",
     eventType: "Wedding Celebration",
     rating: 5,
-    avatar: "/images/wedding.webp",
+    avatar: "/image/weddingphoto.jpeg",
   },
   {
     id: "t2",
@@ -816,7 +816,7 @@ const testimonials: Testimonial[] = [
     role: "Birthday Host",
     eventType: "Birthday Party",
     rating: 5,
-    avatar: "/images/birthday.webp",
+    avatar:"/image/birthday.jpeg",
   },
   {
     id: "t3",
@@ -826,7 +826,7 @@ const testimonials: Testimonial[] = [
     role: "Family Celebration",
     eventType: "Anniversary",
     rating: 5,
-    avatar: "/images/anniversary.webp",
+    avatar: "/image/anniversary.jpeg",
   },
   {
     id: "t4",
@@ -836,7 +836,7 @@ const testimonials: Testimonial[] = [
     role: "Family Host",
     eventType: "Family Celebration",
     rating: 5,
-    avatar: "/images/garden.webp",
+    avatar: "/image/heromain.png",
   },
   {
     id: "t5",
@@ -846,7 +846,7 @@ const testimonials: Testimonial[] = [
     role: "Celebration Host",
     eventType: "Pool Party",
     rating: 5,
-    avatar: "/images/pool.webp",
+    avatar: "/image/swimming.png",
   },
   {
     id: "t6",

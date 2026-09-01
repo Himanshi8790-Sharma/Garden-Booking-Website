@@ -33,7 +33,8 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
   {
     id: "anniversary",
-    src: "/images/anniversary.webp",
+      src: "/image/anniversary.jpeg",
+
     title: "Anniversary Celebrations",
     description:
       "Romantic settings for celebrating love, togetherness, and beautiful milestones.",
@@ -44,7 +45,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "birthday",
-    src: "/images/birthday.webp",
+    src: "/image/birthday.jpeg",
     title: "Birthday Celebrations",
     description:
       "Fun-filled spaces designed for memorable birthday moments with family and friends.",
@@ -55,7 +56,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "garden",
-    src: "/images/garden.webp",
+    src: "/image/heromain.png",
     title: "Our Beautiful Garden",
     description:
       "Open green lawns surrounded by nature, perfect for peaceful gatherings and celebrations.",
@@ -77,7 +78,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "pool",
-    src: "/images/pool.webp",
+    src: "/image/swimming.png",
     title: "Poolside Moments",
     description:
       "Relax, celebrate, and make a splash with a refreshing private pool experience.",
@@ -88,7 +89,7 @@ const galleryItems: GalleryItem[] = [
   },
   {
     id: "wedding",
-    src: "/images/wedding.webp",
+    src: "/image/weddingphoto.jpeg",
     title: "Beautiful Weddings",
     description:
       "A charming outdoor setting where your special day becomes a beautiful memory.",
