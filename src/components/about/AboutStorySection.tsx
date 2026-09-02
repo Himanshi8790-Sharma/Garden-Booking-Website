@@ -1,10 +1,11 @@
+
 "use client";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FiCheckCircle, FiHeart, FiAward, FiSmile } from "react-icons/fi";
+import { FiArrowDown } from "react-icons/fi";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -12,8 +13,9 @@ if (typeof window !== "undefined") {
 
 export default function AboutStorySection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const imageMainRef = useRef<HTMLDivElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const watermarkRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const prefersReducedMotion =
@@ -23,34 +25,67 @@ export default function AboutStorySection() {
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        textRef.current,
-        { opacity: 0, y: 35 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-          },
-        }
-      );
-
-      if (imageMainRef.current) {
+      // Left content animation
+      if (leftRef.current) {
         gsap.fromTo(
-          imageMainRef.current,
-          { opacity: 0, scale: 0.95, y: 40 },
+          leftRef.current,
+          {
+            opacity: 0,
+            y: 45,
+          },
           {
             opacity: 1,
-            scale: 1,
             y: 0,
-            duration: 1.1,
+            duration: 1,
             ease: "power3.out",
             scrollTrigger: {
-              trigger: imageMainRef.current,
-              start: "top 80%",
+              trigger: sectionRef.current,
+              start: "top 75%",
+            },
+          }
+        );
+      }
+
+      // Timeline animation
+      if (timelineRef.current) {
+        const items = timelineRef.current.querySelectorAll(".story-step");
+
+        gsap.fromTo(
+          items,
+          {
+            opacity: 0,
+            y: 30,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: timelineRef.current,
+              start: "top 75%",
+            },
+          }
+        );
+      }
+
+      // Watermark animation
+      if (watermarkRef.current) {
+        gsap.fromTo(
+          watermarkRef.current,
+          {
+            opacity: 0,
+            x: -40,
+          },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: watermarkRef.current,
+              start: "top 85%",
             },
           }
         );
@@ -63,104 +98,610 @@ export default function AboutStorySection() {
   return (
     <section
       ref={sectionRef}
-      aria-label="Our Story & Philosophy"
-      className="w-full py-24 px-6 md:px-12 lg:px-20 bg-[var(--background)] border-b border-[var(--border)] relative overflow-hidden"
+      aria-labelledby="about-story-heading"
+      className="
+        relative
+        w-full
+        overflow-hidden
+        bg-[var(--background)]
+        py-15
+      
+       
+        px-5
+        sm:px-8
+        lg:px-12
+        xl:px-20
+        border-b border-[var(--border)]
+      "
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        {/* Left Column: Visual Image Showcase */}
-        <div className="lg:col-span-6 relative flex flex-col items-center lg:items-start order-2 lg:order-1">
-          <div
-            ref={imageMainRef}
-            className="relative w-full max-w-lg lg:max-w-none h-[400px] sm:h-[500px] rounded-3xl overflow-hidden shadow-2xl border-4 border-[var(--card)] group"
+      <div
+        className="
+          max-w-7xl
+          mx-auto
+          grid
+          grid-cols-1
+          lg:grid-cols-12
+          gap-14
+          lg:gap-16
+        "
+      >
+        {/* =====================================================
+            LEFT SIDE — STORY + IMAGE
+        ====================================================== */}
+        <div
+          ref={leftRef}
+          className="
+            lg:col-span-6
+            relative
+            flex
+            flex-col
+            justify-start
+          "
+        >
+          {/* Small Label */}
+          <div className="mb-5">
+            <span
+              className="
+                inline-flex
+                items-center
+                rounded-full
+                border
+                border-[var(--accent)]/20
+                bg-[var(--accent)]/10
+                px-4
+                py-1.5
+                text-[10px]
+                sm:text-xs
+                font-sans
+                font-semibold
+                uppercase
+                tracking-[0.22em]
+                text-[var(--accent)]
+              "
+            >
+              Our Story
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h2
+            id="about-story-heading"
+            className="
+              max-w-xl
+              text-3xl
+              sm:text-4xl
+              md:text-5xl
+              lg:text-[3.4rem]
+              xl:text-[3.8rem]
+              leading-[1.08]
+              tracking-tight
+              font-serif
+              font-normal
+              text-[var(--foreground)]
+            "
           >
-            <Image
-              src="/images/garden.webp"
-              alt="Helping Garden Club scenic open-air wedding lawn"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/75 via-transparent to-transparent opacity-80"
-              aria-hidden="true"
-            />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
-              <span className="text-xs uppercase tracking-widest text-[var(--accent-light)] font-sans font-medium">
-                Our Sanctuary
-              </span>
-              <h3 className="text-xl font-serif font-normal text-white mt-0.5">
-                Manicured Grounds &amp; Floral Canopies
-              </h3>
-            </div>
-          </div>
-
-          {/* Overlapping Secondary Card */}
-          <div className="relative lg:absolute -bottom-8 lg:-right-6 w-full sm:w-[280px] h-[190px] mt-6 lg:mt-0 rounded-2xl overflow-hidden shadow-2xl border-4 border-[var(--card)] bg-[var(--card)] z-10 group">
-            <Image
-              src="/assets/welcome_palace.webp"
-              alt="Luxury decor setup for private celebrations"
-              fill
-              sizes="(max-width: 640px) 100vw, 280px"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/80 via-transparent to-transparent"
-              aria-hidden="true"
-            />
-            <div className="absolute bottom-3 left-4 text-white">
-              <span className="text-[10px] uppercase tracking-wider text-[var(--accent-light)] font-sans font-semibold">
-                Royal Aesthetics
-              </span>
-              <p className="text-sm font-serif font-light text-white">
-                Bespoke Decor Rigs &amp; Lighting
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column: Copy & Core Values */}
-        <div ref={textRef} className="lg:col-span-6 flex flex-col justify-center order-1 lg:order-2">
-          <span className="text-xs uppercase tracking-[0.25em] text-[var(--accent)] font-semibold mb-3 px-3.5 py-1 bg-[var(--accent)]/10 rounded-full border border-[var(--accent)]/20 font-sans w-fit">
-            Our Story &amp; Heritage
-          </span>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[var(--foreground)] leading-[1.15] font-normal">
-            Where Nature Meets <br />
-            <span className="italic font-light text-[var(--primary)]">
-              Royal Celebration Excellence
+            A Garden Created for
+            <br />
+            <span
+              className="
+                italic
+                font-light
+                text-[var(--primary)]
+              "
+            >
+              Beautiful Celebrations.
             </span>
           </h2>
 
-          <div className="mt-6 text-[var(--foreground-muted)] space-y-4 text-base md:text-lg leading-relaxed font-sans font-light">
-            <p>
-              Helping Garden Club was born out of a passion to offer a truly breathtaking <strong>garden venue</strong> in Jaipur. We envisioned a sanctuary where families could gather away from city noise and host grand <strong>wedding venues</strong>, festive <strong>birthday parties</strong>, intimate <strong>anniversary celebrations</strong>, and refreshing <strong>swimming pool</strong> bashes in complete privacy.
-            </p>
-            <p>
-              Spanning over 12,000 square feet of manicured open-air lawn surrounded by towering palms and blooming floral arches, our venue is designed to give your guests an atmosphere of effortless luxury, timeless charm, and warm Rajasthani hospitality.
-            </p>
+          {/* Image */}
+          <div
+            className="
+              relative
+              mt-10
+              w-full
+              h-[360px]
+              sm:h-[440px]
+              lg:h-[480px]
+              rounded-2xl
+              overflow-hidden
+              group
+              z-10
+            "
+          >
+            <Image
+              src="/image/heromain.png"
+              alt="Owners of Helping Garden Club at their garden event venue in Jaipur"
+              fill
+              sizes="
+                (max-width: 640px) 100vw,
+                (max-width: 1024px) 50vw,
+                50vw
+              "
+              className="
+                object-cover
+                object-center
+                transition-transform
+                duration-700
+                ease-out
+                group-hover:scale-[1.03]
+              "
+            />
+
+            {/* Soft image overlay */}
+            <div
+              className="
+                absolute
+                inset-0
+                bg-gradient-to-t
+                from-[var(--primary-dark)]/45
+                via-transparent
+                to-transparent
+                opacity-70
+              "
+              aria-hidden="true"
+            />
+
+            {/* Owner / Partner label */}
+            <div
+              className="
+                absolute
+                bottom-5
+                left-5
+                sm:bottom-6
+                sm:left-6
+                z-10
+              "
+            >
+              <p
+                className="
+                  text-[10px]
+                  uppercase
+                  tracking-[0.2em]
+                  font-sans
+                  font-medium
+                  text-white/80
+                "
+              >
+                Helping Garden Club
+              </p>
+
+              <p
+                className="
+                  mt-1
+                  text-lg
+                  sm:text-xl
+                  font-serif
+                  text-white
+                "
+              >
+                Our People, Our Place
+              </p>
+            </div>
           </div>
 
-          {/* Key Values List */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[var(--border)]">
-            <div className="flex flex-col items-start p-4 rounded-2xl bg-[var(--background-secondary)] border border-[var(--border)]">
-              <FiHeart className="text-2xl text-[var(--accent)] mb-2" />
-              <h3 className="text-sm font-serif font-medium text-[var(--foreground)]">Passionate Team</h3>
-              <p className="text-xs text-[var(--foreground-muted)] font-sans font-light mt-1">Dedicated event coordinators for seamless planning.</p>
-            </div>
-            <div className="flex flex-col items-start p-4 rounded-2xl bg-[var(--background-secondary)] border border-[var(--border)]">
-              <FiAward className="text-2xl text-[var(--primary)] mb-2" />
-              <h3 className="text-sm font-serif font-medium text-[var(--foreground)]">Luxury Quality</h3>
-              <p className="text-xs text-[var(--foreground-muted)] font-sans font-light mt-1">Impeccably maintained lawns &amp; crystal swimming pool.</p>
-            </div>
-            <div className="flex flex-col items-start p-4 rounded-2xl bg-[var(--background-secondary)] border border-[var(--border)]">
-              <FiSmile className="text-2xl text-[var(--accent)] mb-2" />
-              <h3 className="text-sm font-serif font-medium text-[var(--foreground)]">Total Privacy</h3>
-              <p className="text-xs text-[var(--foreground-muted)] font-sans font-light mt-1">Gated exclusive access reserved solely for your guests.</p>
-            </div>
+          {/* =================================================
+              LARGE LIGHT WATERMARK
+          ================================================== */}
+          <div
+            ref={watermarkRef}
+            className="
+              absolute
+              left-[-20px]
+              sm:left-[-35px]
+              lg:left-[-45px]
+              bottom-[-8px]
+              sm:bottom-[-12px]
+              w-[calc(100%+40px)]
+              overflow-hidden
+              pointer-events-none
+              select-none
+              z-0
+              whitespace-nowrap
+            "
+            aria-hidden="true"
+          >
+            <span
+              className="
+                block
+                text-[5.5rem]
+                sm:text-[8rem]
+                md:text-[9rem]
+                lg:text-[8.5rem]
+                xl:text-[10rem]
+                leading-none
+                font-sans
+                font-semibold
+                tracking-[-0.06em]
+                text-[var(--foreground)]
+                opacity-[0.045]
+              "
+            >
+              GARDEN
+            </span>
           </div>
         </div>
 
+        {/* =====================================================
+            RIGHT SIDE — STORY TIMELINE
+        ====================================================== */}
+        <div
+          ref={timelineRef}
+          className="
+            lg:col-span-6
+            relative
+            lg:pt-5
+          "
+        >
+          {/* Vertical Timeline */}
+          <div
+            className="
+              absolute
+              left-[11px]
+              top-5
+              bottom-5
+              w-px
+              bg-[var(--border)]
+              hidden
+              sm:block
+            "
+            aria-hidden="true"
+          />
+
+          {/* STEP 01 */}
+          <article
+            className="
+              story-step
+              relative
+              sm:pl-16
+              pb-12
+              sm:pb-14
+            "
+          >
+            {/* Timeline Dot */}
+            <div
+              className="
+                absolute
+                left-[5px]
+                top-0
+                hidden
+                sm:flex
+                w-3
+                h-3
+                rounded-full
+                bg-[var(--foreground)]
+                ring-8
+                ring-[var(--background)]
+              "
+              aria-hidden="true"
+            />
+
+            <div className="flex items-center gap-2 mb-5">
+              <span
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  w-6
+                  h-6
+                  rounded-full
+                  bg-[var(--foreground)]
+                  text-[var(--background)]
+                "
+              >
+                <FiArrowDown className="text-xs" />
+              </span>
+
+              <span
+                className="
+                  text-[10px]
+                  sm:text-xs
+                  font-sans
+                  font-semibold
+                  uppercase
+                  tracking-[0.16em]
+                  text-[var(--foreground)]
+                "
+              >
+                Step_01
+              </span>
+            </div>
+
+            <h3
+              className="
+                text-2xl
+                sm:text-3xl
+                font-serif
+                font-normal
+                text-[var(--foreground)]
+                leading-tight
+              "
+            >
+              Why We Started
+            </h3>
+
+            <p
+              className="
+                mt-4
+                max-w-lg
+                text-sm
+                sm:text-base
+                leading-relaxed
+                font-sans
+                font-light
+                text-[var(--foreground-muted)]
+              "
+            >
+              Helping Garden Club was created with a simple idea — to give
+              families a beautiful and comfortable space in Jaipur where
+              they can celebrate their most special moments together.
+            </p>
+          </article>
+
+          {/* STEP 02 */}
+          <article
+            className="
+              story-step
+              relative
+              sm:pl-16
+              pb-12
+              sm:pb-14
+            "
+          >
+            <div
+              className="
+                absolute
+                left-[5px]
+                top-0
+                hidden
+                sm:flex
+                w-3
+                h-3
+                rounded-full
+                bg-[var(--foreground)]
+                ring-8
+                ring-[var(--background)]
+              "
+              aria-hidden="true"
+            />
+
+            <div className="flex items-center gap-2 mb-5">
+              <span
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  w-6
+                  h-6
+                  rounded-full
+                  bg-[var(--foreground)]
+                  text-[var(--background)]
+                "
+              >
+                <FiArrowDown className="text-xs" />
+              </span>
+
+              <span
+                className="
+                  text-[10px]
+                  sm:text-xs
+                  font-sans
+                  font-semibold
+                  uppercase
+                  tracking-[0.16em]
+                  text-[var(--foreground)]
+                "
+              >
+                Step_02
+              </span>
+            </div>
+
+            <h3
+              className="
+                text-2xl
+                sm:text-3xl
+                font-serif
+                font-normal
+                text-[var(--foreground)]
+                leading-tight
+              "
+            >
+              A Place for Every Celebration
+            </h3>
+
+            <p
+              className="
+                mt-4
+                max-w-lg
+                text-sm
+                sm:text-base
+                leading-relaxed
+                font-sans
+                font-light
+                text-[var(--foreground-muted)]
+              "
+            >
+              From weddings and birthday parties to anniversaries and
+              private gatherings, our garden offers an open-air setting
+              designed around different kinds of celebrations.
+            </p>
+          </article>
+
+          {/* STEP 03 */}
+          <article
+            className="
+              story-step
+              relative
+              sm:pl-16
+              pb-12
+              sm:pb-14
+            "
+          >
+            <div
+              className="
+                absolute
+                left-[5px]
+                top-0
+                hidden
+                sm:flex
+                w-3
+                h-3
+                rounded-full
+                bg-[var(--foreground)]
+                ring-8
+                ring-[var(--background)]
+              "
+              aria-hidden="true"
+            />
+
+            <div className="flex items-center gap-2 mb-5">
+              <span
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  w-6
+                  h-6
+                  rounded-full
+                  bg-[var(--foreground)]
+                  text-[var(--background)]
+                "
+              >
+                <FiArrowDown className="text-xs" />
+              </span>
+
+              <span
+                className="
+                  text-[10px]
+                  sm:text-xs
+                  font-sans
+                  font-semibold
+                  uppercase
+                  tracking-[0.16em]
+                  text-[var(--foreground)]
+                "
+              >
+                Step_03
+              </span>
+            </div>
+
+            <h3
+              className="
+                text-2xl
+                sm:text-3xl
+                font-serif
+                font-normal
+                text-[var(--foreground)]
+                leading-tight
+              "
+            >
+              More Than Just a Venue
+            </h3>
+
+            <p
+              className="
+                mt-4
+                max-w-lg
+                text-sm
+                sm:text-base
+                leading-relaxed
+                font-sans
+                font-light
+                text-[var(--foreground-muted)]
+              "
+            >
+              We combine a spacious garden lawn, swimming pool and
+              thoughtfully maintained surroundings to create a relaxed
+              setting for memorable outdoor events.
+            </p>
+          </article>
+
+          {/* STEP 04 */}
+          <article
+            className="
+              story-step
+              relative
+              sm:pl-16
+            "
+          >
+            <div
+              className="
+                absolute
+                left-[5px]
+                top-0
+                hidden
+                sm:flex
+                w-3
+                h-3
+                rounded-full
+                bg-[var(--foreground)]
+                ring-8
+                ring-[var(--background)]
+              "
+              aria-hidden="true"
+            />
+
+            <div className="flex items-center gap-2 mb-5">
+              <span
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  w-6
+                  h-6
+                  rounded-full
+                  bg-[var(--foreground)]
+                  text-[var(--background)]
+                "
+              >
+                <FiArrowDown className="text-xs" />
+              </span>
+
+              <span
+                className="
+                  text-[10px]
+                  sm:text-xs
+                  font-sans
+                  font-semibold
+                  uppercase
+                  tracking-[0.16em]
+                  text-[var(--foreground)]
+                "
+              >
+                Step_04
+              </span>
+            </div>
+
+            <h3
+              className="
+                text-2xl
+                sm:text-3xl
+                font-serif
+                font-normal
+                text-[var(--foreground)]
+                leading-tight
+              "
+            >
+              Our Promise
+            </h3>
+
+            <p
+              className="
+                mt-4
+                max-w-lg
+                text-sm
+                sm:text-base
+                leading-relaxed
+                font-sans
+                font-light
+                text-[var(--foreground-muted)]
+              "
+            >
+              Our goal is simple: a well-kept venue, a welcoming
+              atmosphere and a celebration experience that feels special
+              from the moment your guests arrive.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
   );
