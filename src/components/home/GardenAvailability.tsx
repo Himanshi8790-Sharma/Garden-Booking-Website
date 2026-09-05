@@ -19,7 +19,7 @@ import { FiCalendar, FiCheckCircle, FiInfo, FiSmartphone } from "react-icons/fi"
 // Fallback Google Calendar URL (Public Indian Holidays / General Calendar view as clean demonstration)
 // Replace with your real Google Calendar embed URL when available.
 const DEFAULT_CALENDAR_EMBED_URL =
-  "https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1";
+  "https://calendar.google.com/calendar/embed?src=aayushk4980%40gmail.com&ctz=Asia%2FKolkata";
 
 export default function GardenAvailability() {
   const calendarEmbedUrl =
@@ -30,37 +30,37 @@ export default function GardenAvailability() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 border border-[var(--primary)]/20 text-[var(--primary)] text-xs sm:text-sm font-medium mb-3">
-            <FiCalendar className="w-4 h-4 text-[var(--accent)]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-(--primary)/10 border border-(--primary)/20 text-(--primary) text-xs sm:text-sm font-medium mb-3">
+            <FiCalendar className="w-4 h-4 text-(--accent)" />
             <span>लाइव तारीखें (Live Calendar)</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[var(--primary-dark)] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-(--primary-dark) tracking-tight">
             बुकिंग उपलब्धता
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-custom font-sans leading-relaxed">
             हमारे गार्डन की उपलब्ध और बुक तिथियां देखें।
           </p>
-          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-(--accent) mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Calendar Card Container */}
-        <div className="bg-card-custom rounded-2xl shadow-xl border border-[var(--border)] p-4 sm:p-6 md:p-8">
+        <div className="bg-card-custom rounded-2xl shadow-xl border border-(--border) p-4 sm:p-6 md:p-8">
           {/* Status info bar */}
-          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-[var(--primary-dark)] text-white text-xs sm:text-sm">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-(--primary-dark) text-white text-xs sm:text-sm">
             <div className="flex items-center gap-2">
-              <FiCheckCircle className="w-5 h-5 text-[var(--accent)] flex-shrink-0" />
+              <FiCheckCircle className="w-5 h-5 text-(--accent) shrink-0" />
               <span>
                 <strong>लाइव अपडेट:</strong> बुक की गई तिथियां गूगल कैलेंडर पर अपडेट होती हैं।
               </span>
             </div>
             <div className="flex items-center gap-2 text-slate-300">
-              <FiSmartphone className="w-4 h-4 text-[var(--accent-light)] flex-shrink-0" />
+              <FiSmartphone className="w-4 h-4 text-(--accent-light) shrink-0" />
               <span className="text-xs">मोबाइल कैलेंडर से प्रबंधित</span>
             </div>
           </div>
 
           {/* Google Calendar Iframe Wrapper */}
-          <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-inner min-h-[380px] sm:min-h-[480px] md:min-h-[550px]">
+          <div className="relative w-full overflow-hidden rounded-xl border border-(--border) bg-white shadow-inner min-h-95 sm:min-h-120 md:min-h-[550px]">
             <iframe
               src={calendarEmbedUrl}
               style={{ border: 0 }}
