@@ -19,7 +19,7 @@ import { FiCalendar, FiCheckCircle, FiInfo, FiSmartphone } from "react-icons/fi"
 // Fallback Google Calendar URL (Public Indian Holidays / General Calendar view as clean demonstration)
 // Replace with your real Google Calendar embed URL when available.
 const DEFAULT_CALENDAR_EMBED_URL =
-  "https://calendar.google.com/calendar/embed?src=aayushk4980%40gmail.com&ctz=Asia%2FKolkata";
+  "https://calendar.google.com/calendar/embed?src=sharmahimanshi96644%40gmail.com&ctz=Asia%2FKolkata";
 
 export default function GardenAvailability() {
   const calendarEmbedUrl =

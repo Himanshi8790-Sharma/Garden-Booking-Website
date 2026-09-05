@@ -98,7 +98,7 @@ export default function Header() {
                 <Link href="/" aria-label="Helping Garden Club" className="block transition-transform duration-300 hover:scale-105 active:scale-95">
                     <div className="relative h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20">
                         <Image
-                            src="/assets/logo_final.webp"
+                            src="/image/logo_final.webp"
                             alt="Helping Garden Club Logo"
                             fill
                             priority
