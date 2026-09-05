@@ -60,7 +60,7 @@ export default function AboutPage() {
       <AboutStatsSection />
 
       {/* 4. Our Vision & Mission */}
-      <AboutVisionMissionSection />
+      <AboutVisionMissionSection />`
 
       {/* 5. Why Choose Helping Garden Club */}
       <AboutFeaturesSection />
