@@ -112,7 +112,7 @@ export default function Header() {
             </div>
 
             {/* Hamburger Menu Container */}
-            <div className="fixed right-[20px] top-[20px] sm:right-[50px] sm:top-[50px] z-50">
+            {/* <div className="fixed right-[20px] top-[20px] sm:right-[50px] sm:top-[50px] z-50">
                 <div
                     ref={menuRef}
                     className={`relative bg-[var(--background)] overflow-hidden transition-shadow duration-300 ${isActive ? 'shadow-2xl border-l border-black/5' : ''}`}
@@ -130,7 +130,7 @@ export default function Header() {
                     {navMounted && <Nav wrapperRef={navWrapperRef} onLinkClick={toggleMenu} />}
                 </div>
                 <ToggleButton isActive={isActive} toggleMenu={toggleMenu} />
-            </div>
+            </div> */}
         </>
     );
 }

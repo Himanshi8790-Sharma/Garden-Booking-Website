@@ -1,14 +1,21 @@
 import { Metadata } from 'next';
 import HeroSection from '../components/home/hero/HeroSection';
 import OccasionBannerSlider from '../components/home/banner-slider/OccasionBannerSlider';
-import AboutSection from '../components/home/landing/AboutSection';
-import EventsSection from '../components/home/landing/EventsSection';
-import WhyChooseUsSection from '../components/home/landing/WhyChooseUsSection';
-import PoolSection from '../components/home/landing/PoolSection';
-import GallerySection from '../components/home/landing/GallerySection';
-import PricingSection from '../components/home/landing/PricingSection';
-import TestimonialsSection from '../components/home/landing/TestimonialsSection';
-import FinalCTASection from '../components/home/landing/FinalCTASection';
+
+// New simplified homepage components
+import GardenPhotos from '../components/home/GardenPhotos';
+import GardenAvailability from '../components/home/GardenAvailability';
+import GardenBookingCard from '../components/home/GardenBookingCard';
+
+// Old unused homepage sections kept for potential future reuse
+// import AboutSection from '../components/home/landing/AboutSection';
+// import EventsSection from '../components/home/landing/EventsSection';
+// import WhyChooseUsSection from '../components/home/landing/WhyChooseUsSection';
+// import PoolSection from '../components/home/landing/PoolSection';
+// import GallerySection from '../components/home/landing/GallerySection';
+// import PricingSection from '../components/home/landing/PricingSection';
+// import TestimonialsSection from '../components/home/landing/TestimonialsSection';
+// import FinalCTASection from '../components/home/landing/FinalCTASection';
 
 export const metadata: Metadata = {
     title: "Helping Garden Club | Luxury Wedding & Event Garden Venue",
@@ -32,6 +39,11 @@ export default function Home() {
         <main className="w-full min-h-screen overflow-x-hidden">
             <HeroSection />
             <OccasionBannerSlider />
+            <GardenPhotos />
+            <GardenAvailability />
+            <GardenBookingCard />
+
+            {/* Old sections disabled per client requirement
             <AboutSection />
             <EventsSection />
             <WhyChooseUsSection />
@@ -40,6 +52,7 @@ export default function Home() {
             <PricingSection />
             <TestimonialsSection />
             <FinalCTASection />
+            */}
         </main>
     );
 }
