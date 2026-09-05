@@ -27,7 +27,7 @@ export const occasionBannerSlides: SlideItem[] = [
         destinations: ["Birthday Party", "Kids Party", "Family Party", "Celebration"],
         promo: "Perfect Party Venue | Garden Space & Swimming Pool",
         images: [
-            "/images/birthday.webp",
+            "/image/birthday.webp",
             "/image/pool5.jpeg",
             "/image/decoration2.jpeg",
         ],
@@ -55,7 +55,7 @@ export const occasionBannerSlides: SlideItem[] = [
         images: [
             "/image/pool5.jpeg",
             "/image/decoration2.jpeg",
-            "/images/party.webp",
+            "/image/party.webp",
         ],
         whatsappLink:
             "https://wa.me/919799498256?text=Hello!%20I'm%20interested%20in%20booking%20the%20garden%20for%20a%20swimming%20pool%20party.",
@@ -66,7 +66,7 @@ export const occasionBannerSlides: SlideItem[] = [
         destinations: ["Private Party", "Get Together", "Family Events", "Celebrations"],
         promo: "Make It Special | Spacious Garden For Every Occasion",
         images: [
-            "/images/party.webp",
+            "/image/party.webp",
             "/image/decoration2.jpeg",
             "/image/wedding2.jpeg",
         ],
