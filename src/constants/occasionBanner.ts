@@ -40,7 +40,7 @@ export const occasionBannerSlides: SlideItem[] = [
         destinations: ["Anniversary", "Couples", "Family", "Special Moments"],
         promo: "Celebrate Together | Beautiful Garden Setting & Pool",
         images: [
-            "/image/anniversary.jpeg",
+            "/image/anniversary.webp",
             "/image/decoration2.jpeg",
             "/image/pool5.jpeg",
         ],
