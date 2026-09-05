@@ -44,19 +44,21 @@ export default function HeroBackground({
 
     const section = wrapper.closest("section");
 
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     const ctx = gsap.context(() => {
       if (!prefersReducedMotion && section) {
-        // Initial Cinematic Scale Entrance
+        // Initial Cinematic Scale Entrance (Subtle on mobile to prevent over-cropping)
         gsap.fromTo(
           wrapper,
-          { scale: 1.16 },
+          { scale: isMobile ? 1.05 : 1.16 },
           { scale: 1, duration: 2.2, ease: "power3.out" }
         );
 
         // Scroll Parallax Scrub
         gsap.to(wrapper, {
-          yPercent: 14,
-          scale: 1.08,
+          yPercent: isMobile ? 8 : 14,
+          scale: isMobile ? 1.03 : 1.08,
           ease: "none",
           scrollTrigger: {
             trigger: section,
@@ -95,21 +97,8 @@ export default function HeroBackground({
         fill
         priority
         sizes="100vw"
-        className="z-0 object-cover"
+        className="z-0 object-cover object-[center_35%] md:object-center"
       />
-
-      {/* <video
-        ref={videoRef}
-        muted
-        loop
-        playsInline
-        preload="auto"
-        className="absolute inset-0 z-10 h-full w-full object-cover"
-        style={{
-          opacity: videoReady ? 1 : 0,
-          transition: "opacity 0.7s ease-in-out",
-        }}
-      /> */}
     </div>
   );
 }

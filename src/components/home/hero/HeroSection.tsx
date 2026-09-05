@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -8,10 +9,10 @@ import HeroSocials from "./HeroSocials";
 
 export default function HeroSection() {
   const [videoReady, setVideoReady] = useState(false);
+
   const containerRef = useRef<HTMLElement>(null);
   const contentWrapperRef = useRef<HTMLDivElement>(null);
 
-  // Refs for GSAP animation selectors
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -23,9 +24,10 @@ export default function HeroSection() {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+      const tl = gsap.timeline({
+        defaults: { ease: "power4.out" },
+      });
 
-      // Title line/words slide up smoothly
       if (titleRef.current) {
         tl.fromTo(
           titleRef.current,
@@ -34,7 +36,6 @@ export default function HeroSection() {
         );
       }
 
-      // Subtitle slides up
       if (subtitleRef.current) {
         tl.fromTo(
           subtitleRef.current,
@@ -44,7 +45,6 @@ export default function HeroSection() {
         );
       }
 
-      // CTA buttons slide up with slight scale
       if (ctaRef.current) {
         tl.fromTo(
           ctaRef.current,
@@ -54,7 +54,6 @@ export default function HeroSection() {
         );
       }
 
-      // Socials row
       if (socialIconsRef.current) {
         tl.fromTo(
           socialIconsRef.current,
@@ -64,10 +63,18 @@ export default function HeroSection() {
         );
       }
 
-      // Interactive subtle mouse parallax on desktop
-      if (!prefersReducedMotion && containerRef.current && contentWrapperRef.current) {
+      // Desktop mouse parallax only
+      if (
+        !prefersReducedMotion &&
+        containerRef.current &&
+        contentWrapperRef.current
+      ) {
         const handleMouseMove = (e: MouseEvent) => {
+          // Don't run parallax on mobile
+          if (window.innerWidth < 768) return;
+
           const { innerWidth, innerHeight } = window;
+
           const xPos = (e.clientX / innerWidth - 0.5) * 16;
           const yPos = (e.clientY / innerHeight - 0.5) * 12;
 
@@ -76,10 +83,12 @@ export default function HeroSection() {
             y: yPos,
             duration: 1.2,
             ease: "power2.out",
+            overwrite: "auto",
           });
         };
 
         const heroEl = containerRef.current;
+
         heroEl.addEventListener("mousemove", handleMouseMove);
 
         return () => {
@@ -94,31 +103,80 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen max-h-225 bg-black overflow-hidden flex flex-col justify-between"
+      className="
+        relative
+        w-full
+        h-[85svh]
+        min-h-[520px]
+        max-h-[750px]
+        md:h-screen
+        md:min-h-[620px]
+        md:max-h-[900px]
+        bg-black
+        overflow-hidden
+        flex
+        flex-col
+        justify-between
+      "
     >
-      {/* Subtle dark overlay over background */}
-      <div className="absolute inset-0 bg-black/30 z-15 pointer-events-none" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/35 z-[15] pointer-events-none" />
 
-      {/* Background elements with scale & parallax */}
+      {/* Background */}
       <HeroBackground
         onVideoReady={() => setVideoReady(true)}
         videoReady={videoReady}
       />
 
-      {/* Bottom Content Area with Mouse Parallax */}
-      <div className="relative z-20 w-full px-6 pb-8 md:px-12 md:pb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8 mt-auto">
+      {/* Content */}
+      <div
+        className="
+          relative
+          z-20
+          w-full
+          px-4
+          xs:px-5
+          sm:px-6
+          md:px-12
+          pb-6
+          sm:pb-9
+          md:pb-16
+          pt-20
+          sm:pt-24
+          md:pt-0
+          flex
+          flex-col
+          md:flex-row
+          md:items-end
+          md:justify-between
+          gap-5
+          md:gap-8
+          mt-auto
+        "
+      >
         <div
           ref={contentWrapperRef}
-          className="flex flex-col items-start max-w-[85%] md:max-w-3xl transition-transform duration-300"
+          className="
+            flex
+            flex-col
+            items-start
+            w-full
+            max-w-full
+            sm:max-w-[90%]
+            md:max-w-3xl
+            will-change-transform
+          "
         >
           <HeroContent
             titleRef={titleRef}
             subtitleRef={subtitleRef}
             ctaRef={ctaRef}
           />
+
           <HeroSocials socialIconsRef={socialIconsRef} />
         </div>
       </div>
     </section>
   );
 }
+

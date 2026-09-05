@@ -1,9 +1,9 @@
 import React from "react";
-import { MAP_IFRAME_URL } from  "@/src/constants/links"
+import { MAP_IFRAME_URL } from "@/src/constants/links"
 
 export default function FooterMap() {
     return (
-        <div className="md:col-span-3 flex flex-col items-start w-full">
+        <div className="md:col-span-2 flex flex-col items-start w-full">
             <h4 className="text-[10px] uppercase tracking-[0.25em] text-[#E6D4B8] font-bold font-sans mb-5">
                 Locate Us
             </h4>

@@ -56,7 +56,7 @@ export default function OccasionBannerSlider() {
             ref={containerRef}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="w-full bg-[#FAF9F6] py-16 px-6 md:px-12 flex justify-center"
+            className="w-full bg-[#FAF9F6] py-10 px-6 md:px-12 flex justify-center"
         >
             {/* Main Outer Banner wrapper */}
             <div className="w-full max-w-7xl overflow-hidden rounded-4xl shadow-xl relative h-52.5 md:h-65 bg-slate-950">
