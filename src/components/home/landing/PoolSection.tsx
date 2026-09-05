@@ -24,13 +24,16 @@ export default function PoolSection() {
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      // Parallax scale scrub on background image
+      // Background parallax
       if (bgImageRef.current && sectionRef.current) {
         gsap.fromTo(
           bgImageRef.current,
-          { scale: 1.25, yPercent: -8 },
           {
-            scale: 1.0,
+            scale: 1.25,
+            yPercent: -8,
+          },
+          {
+            scale: 1,
             yPercent: 8,
             ease: "none",
             scrollTrigger: {
@@ -43,11 +46,15 @@ export default function PoolSection() {
         );
       }
 
-      // Content Masked Fade & Scale
+      // Content reveal
       if (contentRef.current && sectionRef.current) {
         gsap.fromTo(
           contentRef.current,
-          { opacity: 0, y: 50, scale: 0.95 },
+          {
+            opacity: 0,
+            y: 50,
+            scale: 0.95,
+          },
           {
             opacity: 1,
             y: 0,
@@ -69,89 +76,341 @@ export default function PoolSection() {
   return (
     <section
       ref={sectionRef}
-      aria-label="Swimming Pool Experience Section"
-      className="relative w-full min-h-145 lg:min-h-165 flex items-center justify-center overflow-hidden bg-black text-white"
+      id="pool"
+      aria-labelledby="pool-section-heading"
+      className="
+        relative
+        w-full
+        min-h-130
+        sm:min-h-145
+        lg:min-h-165
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+        bg-black
+        text-white
+      "
     >
-      {/* Background Image Container with Parallax Scale */}
-      <div ref={bgImageRef} className="absolute inset-0 w-full h-full">
+      {/* =========================================
+          BACKGROUND IMAGE
+      ========================================== */}
+      <div
+        ref={bgImageRef}
+        className="absolute inset-0 w-full h-full"
+        aria-hidden="true"
+      >
         <Image
           src="/images/pool.webp"
-          alt="Luxury Swimming Pool Experience"
+          alt=""
           fill
           priority={false}
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Layered Dark Overlay */}
+
+        {/* Dark overlay for readability */}
         <div
-          className="absolute inset-0 bg-linear-to-r from-(--primary-dark)/90 via-(--primary-dark)/75 to-black/85"
-          aria-hidden="true"
+          className="
+            absolute
+            inset-0
+            bg-linear-to-r
+            from-(--primary-dark)/90
+            via-(--primary-dark)/75
+            to-black/85
+          "
         />
-        <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
+
+        <div className="absolute inset-0 bg-black/35" />
       </div>
 
-      {/* Floating Ambient Glow */}
+      {/* =========================================
+          AMBIENT DECORATIONS
+      ========================================== */}
       <div
-        className="absolute -top-24 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[110px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute -bottom-24 right-1/4 w-96 h-96 bg-(--accent)/15 rounded-full blur-[110px] pointer-events-none"
+        className="
+          absolute
+          -top-24
+          left-1/4
+          w-72
+          h-72
+          sm:w-96
+          sm:h-96
+          bg-cyan-500/10
+          rounded-full
+          blur-[110px]
+          pointer-events-none
+        "
         aria-hidden="true"
       />
 
-      {/* Main Content */}
+      <div
+        className="
+          absolute
+          -bottom-24
+          right-1/4
+          w-72
+          h-72
+          sm:w-96
+          sm:h-96
+          bg-(--accent)/15
+          rounded-full
+          blur-[110px]
+          pointer-events-none
+        "
+        aria-hidden="true"
+      />
+
+      {/* =========================================
+          MAIN CONTENT
+      ========================================== */}
       <div
         ref={contentRef}
-        className="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center flex flex-col items-center"
+        className="
+          relative
+          z-10
+          w-full
+          max-w-4xl
+          mx-auto
+          px-4
+          sm:px-6
+          py-14
+          sm:py-20
+          text-center
+          flex
+          flex-col
+          items-center
+        "
       >
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-400/30 text-cyan-300 text-xs font-sans uppercase tracking-[0.2em] mb-6 backdrop-blur-md">
-          <FiDroplet className="text-cyan-400 text-sm animate-pulse" />
-          <span>Exclusive Venue Amenity</span>
+        {/* Eyebrow */}
+        <div
+          className="
+            inline-flex
+            items-center
+            gap-1.5
+            sm:gap-2
+            px-3
+            sm:px-4
+            py-1.5
+            rounded-full
+            bg-cyan-950/80
+            border
+            border-cyan-400/30
+            text-cyan-300
+            text-[9px]
+            sm:text-xs
+            font-sans
+            uppercase
+            tracking-[0.16em]
+            sm:tracking-[0.2em]
+            mb-4
+            sm:mb-6
+            backdrop-blur-md
+          "
+        >
+          <FiDroplet
+            aria-hidden="true"
+            className="text-cyan-400 text-xs sm:text-sm"
+          />
+
+          <span>Swimming Pool Venue</span>
         </div>
 
-        <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif text-white font-normal leading-[1.1] tracking-tight">
-          Make Your Celebration <br />
+        {/* Heading */}
+        <h2
+          id="pool-section-heading"
+          className="
+            text-3xl
+            sm:text-5xl
+            md:text-6xl
+            font-serif
+            text-white
+            font-normal
+            leading-[1.08]
+            tracking-tight
+          "
+        >
+          Celebrate by the Pool
+          <br className="hidden sm:block" />
+
           <span className="italic font-light text-cyan-200">
-            More Refreshing
+            in a Relaxed Setting
           </span>
         </h2>
 
-        <p className="mt-6 text-slate-200 font-sans font-light text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed">
-          Elevate your event with exclusive access to our sparkling turquoise swimming pool. Perfect for pool party bashes, sunny cocktail lounges, or late-night celebratory dips.
+        {/* SEO-friendly description */}
+        <p
+          className="
+            mt-4
+            sm:mt-6
+            text-slate-200
+            font-sans
+            font-light
+            text-sm
+            sm:text-lg
+            md:text-xl
+            max-w-2xl
+            leading-relaxed
+          "
+        >
+          Enjoy our swimming pool for pool parties, birthday celebrations,
+          summer gatherings, and private events at Helping Garden Club.
         </p>
 
-        {/* Feature Tags */}
-        <div className="mt-8 flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-sans font-medium text-cyan-100">
-          <span className="px-4 py-2 bg-white/10 rounded-full backdrop-blur-md border border-white/15">
-            🏊 Filtered Crystal Water
+        {/* =========================================
+            FEATURE TAGS
+        ========================================== */}
+        <div
+          className="
+            mt-5
+            sm:mt-8
+            flex
+            flex-wrap
+            justify-center
+            gap-2
+            sm:gap-3
+            md:gap-6
+            text-[10px]
+            sm:text-sm
+            font-sans
+            font-medium
+            text-cyan-100
+          "
+          aria-label="Swimming pool features"
+        >
+          <span
+            className="
+              px-3
+              sm:px-4
+              py-1.5
+              sm:py-2
+              bg-white/10
+              rounded-full
+              backdrop-blur-md
+              border
+              border-white/15
+            "
+          >
+            Poolside Celebrations
           </span>
-          <span className="px-4 py-2 bg-white/10 rounded-full backdrop-blur-md border border-white/15">
-            🍹 Poolside Bar &amp; Sunbeds
+
+          <span
+            className="
+              px-3
+              sm:px-4
+              py-1.5
+              sm:py-2
+              bg-white/10
+              rounded-full
+              backdrop-blur-md
+              border
+              border-white/15
+            "
+          >
+            Private Pool
           </span>
-          <span className="px-4 py-2 bg-white/10 rounded-full backdrop-blur-md border border-white/15">
-            ✨ Starlit Ambient Lighting
+
+          <span
+            className="
+              px-3
+              sm:px-4
+              py-1.5
+              sm:py-2
+              bg-white/10
+              rounded-full
+              backdrop-blur-md
+              border
+              border-white/15
+            "
+          >
+            Summer Gatherings
           </span>
         </div>
 
-        {/* Action Buttons */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        {/* =========================================
+            ACTION BUTTONS
+        ========================================== */}
+        <div
+          className="
+            mt-7
+            sm:mt-10
+            flex
+            flex-wrap
+            items-center
+            justify-center
+            gap-2.5
+            sm:gap-4
+          "
+        >
           <Link
             href="#booking"
-            className="px-8 py-4 bg-(--accent) text-black font-sans text-xs uppercase tracking-widest font-bold rounded-full hover:bg-(--accent-light) transition-all duration-300 flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 cursor-pointer"
+            aria-label="Book the swimming pool at Helping Garden Club"
+            className="
+              px-5
+              py-3
+              sm:px-8
+              sm:py-4
+              bg-(--accent)
+              text-black
+              font-sans
+              text-[10px]
+              sm:text-xs
+              uppercase
+              tracking-[0.12em]
+              sm:tracking-widest
+              font-bold
+              rounded-full
+              hover:bg-(--accent-light)
+              transition-all
+              duration-300
+              flex
+              items-center
+              gap-1.5
+              sm:gap-2
+              shadow-2xl
+              hover:scale-105
+              active:scale-95
+            "
           >
             <span>Book Pool</span>
-            <FiArrowRight className="text-base" />
+
+            <FiArrowRight
+              aria-hidden="true"
+              className="text-sm sm:text-base"
+            />
           </Link>
+
           <Link
             href="#gallery"
-            className="px-8 py-4 bg-white/10 border border-white/30 text-white font-sans text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-white/20 transition-all duration-300 backdrop-blur-sm cursor-pointer"
+            aria-label="View Helping Garden Club swimming pool gallery"
+            className="
+              px-5
+              py-3
+              sm:px-8
+              sm:py-4
+              bg-white/10
+              border
+              border-white/30
+              text-white
+              font-sans
+              text-[10px]
+              sm:text-xs
+              uppercase
+              tracking-[0.12em]
+              sm:tracking-widest
+              font-semibold
+              rounded-full
+              hover:bg-white/20
+              transition-all
+              duration-300
+              backdrop-blur-sm
+            "
           >
-            View Pool Gallery
+            View Gallery
           </Link>
         </div>
-
       </div>
     </section>
   );
 }
+

@@ -50,38 +50,38 @@ export default function FinalCTASection() {
 
   //   return () => ctx.revert();
   // }, []);
-useEffect(() => {
-  const prefersReducedMotion =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (prefersReducedMotion) return;
+    if (prefersReducedMotion) return;
 
-  const ctx = gsap.context(() => {
-    if (containerRef.current && sectionRef.current) {
-      gsap.fromTo(
-        containerRef.current,
-        {
-          opacity: 0,
-          y: 45,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.9,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            once: true,
+    const ctx = gsap.context(() => {
+      if (containerRef.current && sectionRef.current) {
+        gsap.fromTo(
+          containerRef.current,
+          {
+            opacity: 0,
+            y: 45,
           },
-        }
-      );
-    }
-  }, sectionRef);
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          },
+        );
+      }
+    }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
   return (
     <section
       ref={sectionRef}
@@ -89,10 +89,10 @@ useEffect(() => {
       aria-label="Final Call To Action"
       className="w-full py-24 px-6 md:px-12 lg:px-20 bg-(--background) relative overflow-hidden"
     >
-     <div
-  ref={containerRef}
-  className="max-w-7xl mx-auto rounded-[2.5rem] relative overflow-hidden bg-linear-to-br from-(--primary-dark) via-[#0F2D20] to-(--primary-dark) text-white shadow-2xl p-10 sm:p-16 lg:p-20 border border-(--accent)/30"
->
+      <div
+        ref={containerRef}
+        className="max-w-7xl mx-auto rounded-[2.5rem] relative overflow-hidden bg-linear-to-br from-(--primary-dark) via-[#0F2D20] to-(--primary-dark) text-white shadow-2xl p-10 sm:p-16 lg:p-20 border border-(--accent)/30"
+      >
         {/* Background CTA Image with Mask */}
         <div className="absolute inset-0 z-0 opacity-25 mix-blend-overlay pointer-events-none">
           <Image
@@ -116,40 +116,48 @@ useEffect(() => {
 
         <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
           <span className="text-xs uppercase tracking-[0.25em] text-(--accent-light) font-semibold px-4 py-1.5 bg-white/10 rounded-full border border-white/15 mb-6 backdrop-blur-md font-sans">
-            Reserve Your Special Date
+            {" "}
+            Plan Your Celebration{" "}
           </span>
-
+          {/* Heading */}{" "}
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif font-normal text-white leading-[1.1] tracking-tight">
-            Your Celebration <br />
+            {" "}
+            Your Special Event <br />{" "}
             <span className="italic font-light text-(--accent-light)">
-              Starts Here
-            </span>
+              {" "}
+              Starts Here{" "}
+            </span>{" "}
           </h2>
-
+          {/* Description */}{" "}
           <p className="mt-6 text-slate-200 font-sans font-light text-base sm:text-lg md:text-xl leading-relaxed">
-            Let us help you bring your dream wedding, birthday bash, or private gathering to life in our stunning garden venue. Get in touch with our event planners today.
+            {" "}
+            Looking for a beautiful garden venue for your wedding, birthday,
+            anniversary, pool party, or private celebration? Get in touch with
+            Helping Garden Club to check availability and plan your event.{" "}
           </p>
-
           {/* CTAs */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            {" "}
             <Link
               href="#booking"
               className="px-8 py-4 bg-(--accent) text-black font-sans text-xs uppercase tracking-widest font-bold rounded-full hover:bg-(--accent-light) transition-all duration-300 flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 cursor-pointer"
             >
-              <FiCalendar className="text-base" />
-              <span>Book Your Event</span>
-              <FiArrowRight className="text-base" />
-            </Link>
-
+              {" "}
+              <FiCalendar className="text-base" />{" "}
+              <span>Check Availability</span>{" "}
+              <FiArrowRight className="text-base" />{" "}
+            </Link>{" "}
             <a
               href="tel:+919799498256"
+              aria-label="Call Helping Garden Club for event booking"
               className="px-8 py-4 bg-white/10 border border-white/30 text-white font-sans text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-white/20 transition-all duration-300 flex items-center gap-2 backdrop-blur-md active:scale-95 cursor-pointer"
             >
-              <FiPhoneCall className="text-base text-(--accent-light)" />
-              <span>Contact Us</span>
-            </a>
-          </div>
-
+              {" "}
+              <FiPhoneCall className="text-base text-(--accent-light)" />{" "}
+              <span>Call for Booking</span>{" "}
+            </a>{" "}
+          </div>{" "}
+        
           <div className="mt-8 flex flex-wrap justify-center items-center gap-6 text-xs text-slate-300 font-sans font-light">
             <span>✨ Instant Confirmation</span>
             <span>•</span>
@@ -157,7 +165,6 @@ useEffect(() => {
             <span>•</span>
             <span>📞 Direct Concierge</span>
           </div>
-
         </div>
       </div>
     </section>

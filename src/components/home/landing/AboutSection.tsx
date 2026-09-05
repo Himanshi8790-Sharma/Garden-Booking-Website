@@ -18,28 +18,20 @@ interface FeatureHighlight {
 
 const keyHighlights: FeatureHighlight[] = [
   {
-    title: "Spacious Garden",
-    desc: "3600+ sq. ft. of lush outdoor space.",
+    title: "Weddings",
+    desc: "Beautiful outdoor celebrations.",
   },
   {
-    title: "Weddings & Receptions",
-    desc: "Beautiful settings for your special day.",
-  },
-  {
-    title: "Birthdays & Anniversaries",
-    desc: "Celebrate every milestone in style.",
+    title: "Birthdays",
+    desc: "Fun celebrations with loved ones.",
   },
   {
     title: "Swimming Pool",
-    desc: "Perfect for relaxed poolside gatherings.",
+    desc: "Perfect for poolside gatherings.",
   },
   {
     title: "Private Events",
-    desc: "A comfortable space for family and friends.",
-  },
-  {
-    title: "Flexible Setup",
-    desc: "Create the celebration you have imagined.",
+    desc: "A comfortable space to celebrate.",
   },
 ];
 
@@ -206,29 +198,28 @@ export default function AboutSection() {
           {/* Description */}
           <div
             ref={textRef}
-            className="mt-7 text-(--foreground-muted) text-base md:text-lg leading-relaxed font-sans font-light "
+            className="mt-5 text-(--foreground-muted) text-base md:text-lg leading-relaxed font-sans font-light "
           >
-            <p className="max-w-2xl">
-              Surrounded by lush greenery and open skies, Helping Garden Club
-              offers an elegant setting for weddings, birthdays, anniversaries,
-              poolside gatherings, and private celebrations.
+            <p className="max-w-xl">
+              A beautiful garden venue for weddings, birthdays, poolside
+              gatherings, and private celebrations.
             </p>
 
             {/* Feature Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-7">
+            <div className="grid grid-cols-2 gap-2.5 mt-5">
               {keyHighlights.map((item, idx) => (
                 <div
                   key={idx}
-                  className="group flex items-start gap-3 p-3.5 rounded-2xl bg-(--background-secondary) border border-(--border) transition-all duration-300 hover:border-(--accent)/50 hover:shadow-md"
+                  className="group flex items-start gap-2.5 p-3 rounded-xl bg-(--background-secondary) border border-(--border) transition-all duration-300 hover:border-(--accent)/50 hover:shadow-md"
                 >
                   <FiCheckCircle className="text-(--accent) text-lg shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-110 " />
 
                   <div>
-                    <h3 className="text-xs font-sans font-semibold text-(--foreground) uppercase tracking-wider ">
+                    <h3 className="text-[11px] sm:text-xs font-sans font-semibold text-(--foreground)">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-(--foreground-muted) font-sans font-light mt-1 leading-snug ">
+                    <p className="text-[10px] sm:text-xs text-(--foreground-muted) font-sans font-light mt-0.5 leading-snug">
                       {item.desc}
                     </p>
                   </div>
@@ -242,13 +233,12 @@ export default function AboutSection() {
           ========================================== */}
           <div
             ref={statsRef}
-            className="mt-9 pt-7 border-t border-(--border) flex flex-wrap items-center justify-between gap-6 "
-          >
+className="mt-6 pt-5 border-t border-(--border) flex flex-wrap items-center justify-between gap-4"          >
             {/* Stats */}
             <div className="flex items-center gap-7 sm:gap-9">
               {/* Lawn */}
               <div>
-                <p className="text-3xl sm:text-4xl font-serif font-semibold text-(--primary) ">
+                <p className="text-2xl sm:text-3xl font-serif font-semibold text-(--primary)">
                   3600+
                 </p>
 
@@ -262,7 +252,7 @@ export default function AboutSection() {
 
               {/* Capacity */}
               <div>
-                <p className="text-3xl sm:text-4xl font-serif font-semibold text-(--accent) ">
+                <p className="text-2xl sm:text-3xl font-serif font-semibold text-(--accent)">
                   500+
                 </p>
 
@@ -275,7 +265,7 @@ export default function AboutSection() {
             {/* CTA */}
             <Link
               href="#events"
-              className="px-6 py-3.5 bg-(--primary) text-white font-text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-(--primary-dark) transition-all duration-300 flex items-center gap-2 shadow-lg shadow-(--primary)/15 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 cursor-pointer "
+             className="px-4 py-3 sm:px-6 sm:py-3.5 bg-(--primary) text-white text-[10px] sm:text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-(--primary-dark) transition-all duration-300 flex items-center gap-1.5 shadow-lg shadow-(--primary)/15 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 cursor-pointer"
             >
               <span>Explore Events</span>
               <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />

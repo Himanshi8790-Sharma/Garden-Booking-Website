@@ -33,11 +33,10 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
   {
     id: "anniversary",
-      src: "/image/anniversary.jpeg",
-
-    title: "Anniversary Celebrations",
+    src: "/image/anniversary.jpeg",
+    title: "Anniversary Celebration Venue",
     description:
-      "Romantic settings for celebrating love, togetherness, and beautiful milestones.",
+      "Celebrate your anniversary in a beautiful garden setting with family and loved ones.",
     category: "Anniversary",
     icon: FiHeart,
     spanClass: "md:col-span-7",
@@ -46,9 +45,9 @@ const galleryItems: GalleryItem[] = [
   {
     id: "birthday",
     src: "/image/birthday.jpeg",
-    title: "Birthday Celebrations",
+    title: "Birthday Party Venue",
     description:
-      "Fun-filled spaces designed for memorable birthday moments with family and friends.",
+      "A spacious outdoor setting for memorable birthday parties with family and friends.",
     category: "Birthday",
     icon: FiGift,
     spanClass: "md:col-span-5",
@@ -57,10 +56,10 @@ const galleryItems: GalleryItem[] = [
   {
     id: "garden",
     src: "/image/heromain.png",
-    title: "Our Beautiful Garden",
+    title: "Beautiful Garden Venue",
     description:
-      "Open green lawns surrounded by nature, perfect for peaceful gatherings and celebrations.",
-    category: "Garden",
+      "Lush green lawns and open spaces for weddings, parties, and private celebrations.",
+    category: "Garden Venue",
     icon: FiSun,
     spanClass: "md:col-span-5",
     heightClass: "h-[330px] sm:h-[400px]",
@@ -68,9 +67,9 @@ const galleryItems: GalleryItem[] = [
   {
     id: "party",
     src: "/images/party.webp",
-    title: "Evening Parties",
+    title: "Outdoor Party Celebrations",
     description:
-      "Bring your celebrations to life with music, lights, laughter, and great company.",
+      "Enjoy memorable evening parties with music, lights, and a beautiful outdoor atmosphere.",
     category: "Party",
     icon: FiMusic,
     spanClass: "md:col-span-7",
@@ -79,9 +78,9 @@ const galleryItems: GalleryItem[] = [
   {
     id: "pool",
     src: "/image/swimming.png",
-    title: "Poolside Moments",
+    title: "Swimming Pool Celebrations",
     description:
-      "Relax, celebrate, and make a splash with a refreshing private pool experience.",
+      "Make your event special with a private swimming pool for pool parties and summer gatherings.",
     category: "Swimming Pool",
     icon: FiDroplet,
     spanClass: "md:col-span-6",
@@ -90,9 +89,9 @@ const galleryItems: GalleryItem[] = [
   {
     id: "wedding",
     src: "/image/weddingphoto.jpeg",
-    title: "Beautiful Weddings",
+    title: "Outdoor Wedding Venue",
     description:
-      "A charming outdoor setting where your special day becomes a beautiful memory.",
+      "A charming garden setting for weddings, receptions, and beautiful celebrations with loved ones.",
     category: "Wedding",
     icon: FiStar,
     spanClass: "md:col-span-6",
@@ -197,7 +196,7 @@ export default function GallerySection() {
     <section
       ref={sectionRef}
       id="gallery"
-      aria-label="Helping Garden Club Gallery"
+      aria-label="Helping Garden Club garden venue and event gallery"
       className="relative w-full py-15 px-6 bg-(--background-secondary) border-b border-(--border) overflow-hidden "
     >
       {/* =========================================
@@ -223,22 +222,21 @@ export default function GallerySection() {
           ref={headerRef}
           className="max-w-3xl mx-auto text-center flex flex-col items-center "
         >
-          <span className="inline-flex items-center text-[10px] sm:text-xs uppercase tracking-[0.28em] text-(--accent) font-semibold px-4 py-1.5 bg-(--accent)/10 rounded-full border border-(--accent)/20 font-sans ">
-            Our Gallery
+          <span className="inline-flex items-center text-[10px] sm:text-xs uppercase tracking-[0.28em] text-(--accent) font-semibold px-4 py-1.5 bg-(--accent)/10 rounded-full border border-(--accent)/20 font-sans">
+            Helping Garden Club Gallery
           </span>
-
-          <h2 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-(--foreground) leading-[1.05] font-normal ">
-            Moments Made
-            <br />
+          <h2 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-(--foreground) leading-[1.05] font-normal">
+            {" "}
+            Explore Our <br />
             <span className="italic font-light text-(--primary)">
-              Beautiful
+              Garden & Events
             </span>
           </h2>
-
-          <p className="mt-6 max-w-2xl text-(--foreground-muted) font-sans font-light text-base md:text-lg leading-relaxed ">
-            Take a glimpse at the spaces and celebrations that make Helping
-            Garden Club a beautiful place to gather, celebrate, and create
-            lasting memories.
+          <p className="mt-6 max-w-2xl text-(--foreground-muted) font-sans font-light text-base md:text-lg leading-relaxed">
+            {" "}
+            Explore our garden venue, wedding celebrations, birthday parties,
+            anniversaries, outdoor events, and swimming pool gatherings at
+            Helping Garden Club.{" "}
           </p>
         </div>
 
@@ -297,8 +295,7 @@ export default function GallerySection() {
                     {item.title}
                   </h3>
 
-                  <p
-                    className="mt-2 max-w-lg text-xs sm:text-sm leading-relaxed text-white/75 font-sans font-light opacity-90 ">
+                  <p className="mt-2 max-w-lg text-xs sm:text-sm leading-relaxed text-white/75 font-sans font-light opacity-90 ">
                     {item.description}
                   </p>
 
@@ -318,7 +315,7 @@ export default function GallerySection() {
             href="#contact"
             className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full border border-(--primary)/40 text-(--primary) text-xs uppercase tracking-[0.16em] font-semibold font-sans hover:bg-(--primary) hover:text-white transition-all duration-300 "
           >
-            <span>Plan Your Celebration</span>
+            <span>Plan Your Event</span>
 
             <span className="text-base transition-transform duration-300 group-hover:translate-x-1 ">
               →

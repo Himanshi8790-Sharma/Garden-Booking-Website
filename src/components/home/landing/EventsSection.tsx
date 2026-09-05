@@ -129,7 +129,7 @@ export default function EventsSection() {
       ref={sectionRef}
       id="events"
       aria-label="Tailored Event Occasions"
-      className="w-full py-28 px-6 md:px-12 lg:px-20 bg-(--background-secondary) border-b border-(--border) relative"
+      className="w-full py-10 px-6 md:px-12 lg:px-20 bg-(--background-secondary) border-b border-(--border) relative"
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         
