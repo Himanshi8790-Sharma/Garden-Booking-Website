@@ -173,7 +173,7 @@ export default function HeroSection() {
             ctaRef={ctaRef}
           />
 
-          <HeroSocials socialIconsRef={socialIconsRef} />
+          {/* <HeroSocials socialIconsRef={socialIconsRef} /> */}
         </div>
       </div>
     </section>

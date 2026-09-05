@@ -16,7 +16,7 @@ export const PINTEREST_LINK = "https://pinterest.com";
 export const TWITTER_LINK = "https://twitter.com";
 
 export const ADDRESS_TEXT =
-  "Baig Shab Ki Kothi, Sai Nagar, Naki Thadi, Ramgarh Road, Jaipur, Rajasthan 302004";
+  "Baig Shab Ki Kothi, Sayyed Nagar, Nai ki Thadi, Ramgarh Road, Jaipur, Rajasthan 303109";
 export const MAP_IFRAME_URL = "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4292.378097946355!2d75.8954880754412!3d26.962308376617617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDU3JzQ0LjMiTiA3NcKwNTMnNTMuMCJF!5e1!3m2!1sen!2sin!4v1788279194956!5m2!1sen!2sin";
 
 export const MAP_DIRECTIONS_LINK = "https://maps.app.goo.gl/kbnrHvL6MFiXKcSu5";

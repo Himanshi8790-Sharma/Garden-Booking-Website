@@ -1,7 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { FiArrowRight, FiCheckCircle, FiTag, FiPlusCircle } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiCheckCircle,
+  FiTag,
+  FiPlusCircle,
+} from "react-icons/fi";
 
 export default function GardenBookingCard() {
   return (
@@ -17,7 +22,7 @@ export default function GardenBookingCard() {
             <span>Pricing Section</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[var(--primary-dark)] tracking-tight">
-          बुकिंग एवं मूल्य विवरण
+            बुकिंग एवं मूल्य विवरण
           </h2>
           <p className="mt-3 text-sm sm:text-base text-[var(--foreground-muted)] max-w-xl mx-auto">
             अपने आयोजन के अनुसार उपयुक्त बुकिंग पैकेज का चयन करें।
@@ -36,10 +41,7 @@ export default function GardenBookingCard() {
 
             <div>
               {/* Tag Header */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--accent)] text-[var(--primary-dark)] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 shadow-md">
-                <FiTag className="w-4 h-4" />
-                <span>विशेष बुकिंग ऑफर</span>
-              </div>
+            
 
               {/* Heading */}
               <h3 className="text-3xl sm:text-4xl font-serif font-bold text-[var(--background)] tracking-tight">
@@ -47,7 +49,12 @@ export default function GardenBookingCard() {
               </h3>
 
               <p className="mt-3 text-base text-slate-300 font-sans max-w-xl mx-auto">
-                गार्डन बुकिंग केवल <span className="text-[var(--accent-light)] font-semibold">₹41,000/-</span> में उपलब्ध है। शादी, सगाई, पार्टी एवं विशेष अवसरों के लिए बेहतरीन स्थान।
+                गार्डन बुकिंग केवल{" "}
+                <span className="text-[var(--accent-light)] font-semibold">
+                  ₹41,000/-
+                </span>{" "}
+                में उपलब्ध है। शादी, सगाई, पार्टी एवं विशेष अवसरों के लिए
+                बेहतरीन स्थान।
               </p>
 
               {/* Prominent Price Display */}
@@ -101,56 +108,46 @@ export default function GardenBookingCard() {
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[var(--accent)]/20 to-transparent rounded-tr-full pointer-events-none" />
 
             <div>
-              {/* Tag Header */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 text-[var(--accent-light)] border border-[var(--accent)]/40 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 shadow-md">
-                <FiPlusCircle className="w-4 h-4 text-[var(--accent)]" />
-                <span>बर्तन सुविधा विकल्प</span>
-              </div>
-
               {/* Heading */}
               <h3 className="text-3xl sm:text-4xl font-serif font-bold text-[var(--background)] tracking-tight">
                 बर्तन सुविधा
               </h3>
 
-              <p className="mt-3 text-base text-slate-300 font-sans max-w-xl mx-auto">
-                बर्तन सुविधा केवल <span className="text-[var(--accent-light)] font-semibold">₹10,000/-</span> में उपलब्ध है। विशेष व्यवस्था, प्रीमियम सजावट एवं बर्तन सुविधाएं।
-              </p>
+              {/* Pricing Boxes - Separate */}
+             {/* Pricing Boxes - Column Layout */}
+<div className="my-8 flex flex-col gap-4 w-full">
 
-              {/* Prominent Price Display - Visually Separated */}
-              <div className="my-8 py-5 px-4 sm:px-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md max-w-md mx-auto flex flex-col items-center justify-center gap-1 shadow-inner">
-                <span className="text-xs sm:text-sm uppercase tracking-widest text-[var(--accent-light)] font-medium">
-                  बर्तन सुविधा
-                </span>
-                <div className="text-4xl sm:text-5xl font-serif font-extrabold text-[var(--accent-light)] drop-shadow-md tracking-tight">
-                  ₹10,000/-
-                </div>
+  {/* बर्तन सुविधा Box */}
+  <div className="w-full py-5 px-4 sm:px-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col items-center justify-center gap-1 shadow-inner">
+    <span className="text-xs sm:text-sm uppercase tracking-widest text-[var(--accent-light)] font-medium">
+      बर्तन सुविधा
+    </span>
 
-                {/* Visually Separated Cleaning Charge */}
-                <div className="mt-2 pt-2 border-t border-white/10 w-full flex flex-col items-center gap-0.5">
-                  <span className="text-xs sm:text-sm text-amber-200 font-medium">
-                    सफाई शुल्क: <span className="font-bold text-white">₹1,500/-</span>
-                  </span>
-                  <span className="text-[11px] sm:text-xs text-slate-400">
-                    (₹1,500/- सफाई शुल्क अलग से | कुल: ₹11,500/-)
-                  </span>
-                </div>
-              </div>
+    <div className="text-3xl sm:text-4xl font-serif font-extrabold text-[var(--accent-light)] drop-shadow-md tracking-tight">
+      ₹10,000/-
+    </div>
 
-              {/* Feature Highlights */}
-              <div className="flex flex-wrap justify-center gap-3 text-xs sm:text-sm text-slate-300 mb-8">
-                <div className="flex items-center gap-1.5">
-                  <FiCheckCircle className="w-4 h-4 text-[var(--accent)]" />
-                  <span>विशेष एक्स्ट्रा सजावट</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <FiCheckCircle className="w-4 h-4 text-[var(--accent)]" />
-                  <span>प्रीमियम सुविधाएं</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <FiCheckCircle className="w-4 h-4 text-[var(--accent)]" />
-                  <span>₹1,500/- सफाई शुल्क अलग से</span>
-                </div>
-              </div>
+    <span className="text-[11px] sm:text-xs text-slate-400 mt-1">
+      बर्तन पैकेज
+    </span>
+  </div>
+
+  {/* साफ-सफाई Box */}
+  <div className="w-full py-5 px-4 sm:px-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col items-center justify-center gap-1 shadow-inner">
+    <span className="text-xs sm:text-sm uppercase tracking-widest text-[var(--accent-light)] font-medium">
+      साफ-सफाई
+    </span>
+
+    <div className="text-3xl sm:text-4xl font-serif font-extrabold text-[var(--accent-light)] drop-shadow-md tracking-tight">
+      ₹1,500/-
+    </div>
+
+    <span className="text-[11px] sm:text-xs text-slate-400 mt-1">
+      सफाई शुल्क अलग से
+    </span>
+  </div>
+
+</div>
             </div>
 
             {/* CTA Navigation Button to /additional-package */}
@@ -169,4 +166,3 @@ export default function GardenBookingCard() {
     </section>
   );
 }
-

@@ -93,7 +93,7 @@ export default function Header() {
     return (
         <>
             {/* Sticky Logo */}
-            <div className="absolute sm:fixed top-[12px] left-[20px] sm:top-[38px] sm:left-[50px] lg:top-[30px] lg:left-[50px] z-50">
+            {/* <div className="absolute sm:fixed top-[12px] left-[20px] sm:top-[38px] sm:left-[50px] lg:top-[30px] lg:left-[50px] z-50">
 
                 <Link href="/" aria-label="Helping Garden Club" className="block transition-transform duration-300 hover:scale-105 active:scale-95">
                     <div className="relative h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20">
@@ -109,7 +109,7 @@ export default function Header() {
 
                     </div>
                 </Link>
-            </div>
+            </div> */}
 
             {/* Hamburger Menu Container */}
             {/* <div className="fixed right-[20px] top-[20px] sm:right-[50px] sm:top-[50px] z-50">

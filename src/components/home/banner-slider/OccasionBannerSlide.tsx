@@ -34,7 +34,7 @@ export default function OccasionBannerSlide({
             />
 
             {/* Bottom-Right Action Buttons */}
-            <SlideActions whatsappLink={slide.whatsappLink} />
+            {/* <SlideActions whatsappLink={slide.whatsappLink} /> */}
         </div>
     );
 }

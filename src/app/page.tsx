@@ -40,8 +40,9 @@ export default function Home() {
             <HeroSection />
             <OccasionBannerSlider />
             <GardenPhotos />
-            <GardenAvailability />
+            
             <GardenBookingCard />
+            <GardenAvailability />
 
             {/* Old sections disabled per client requirement
             <AboutSection />

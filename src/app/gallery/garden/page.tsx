@@ -23,7 +23,7 @@ const subCategories = [
     description: "विशाल हरा-भरा गार्डन, प्राकृतिक लैंडस्केप, प्रवेश द्वार एवं सीटिंग एरिया",
     image: "/image/garden1.jpeg",
     link: "/gallery/garden/venue",
-    count: "8 तस्वीरें",
+    // count: "8 तस्वीरें",
     badge: "🌿 वेन्यू",
   },
   {
@@ -33,7 +33,7 @@ const subCategories = [
     description: "भव्य वेडिंग सेटअप, स्टेज फ्लावर डेकोरेशन, रेड कारपेट एवं एल.ई.डी. सजावट",
     image: "/image/wedding1.jpeg",
     link: "/gallery/garden/wedding-decoration",
-    count: "8 तस्वीरें",
+    // count: "8 तस्वीरें",
     badge: "💐 डेकोरेशन",
   },
   {
@@ -43,7 +43,7 @@ const subCategories = [
     description: "बर्थडे पार्टी, एनीवर्सरी, फैमिली इवेंट्स एवं नाइट पार्टी डेकोरेशन",
     image: "/image/birthday1.jpeg",
     link: "/gallery/garden/birthday-party",
-    count: "6 तस्वीरें",
+    // count: "6 तस्वीरें",
     badge: "🎂 पार्टी",
   },
 ];
@@ -104,7 +104,7 @@ export default function GardenGalleryIndexPage() {
                   {cat.badge}
                 </span>
                 <span className="px-3 py-1 rounded-full text-[11px] font-medium bg-black/50 text-white border border-white/20 backdrop-blur-md">
-                  {cat.count}
+                  {/* {cat.count} */}
                 </span>
               </div>
 
