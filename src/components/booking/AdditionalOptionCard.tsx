@@ -24,7 +24,7 @@
 //         </span>
 
 //         <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[var(--primary-dark)] mt-3">
-//           अतिरिक्त सुविधा (Optional Additional Facility)
+//           बर्तन सुविधा (Optional Additional Facility)
 //         </h2>
 
 //         <div className="mt-3 inline-block px-4 py-2 rounded-xl bg-[var(--primary-dark)] text-[var(--accent-light)] font-serif font-extrabold text-2xl sm:text-3xl shadow-md border border-[var(--accent)]/40">
@@ -46,7 +46,7 @@
 //           <div className="md:col-span-5 relative h-56 sm:h-64 md:h-72 w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg">
 //             <Image
 //               src={ADDITIONAL_OPTION_IMAGE}
-//               alt="अतिरिक्त सुविधा (₹10,000/- Extra Option)"
+//               alt="बर्तन सुविधा (₹10,000/- Extra Option)"
 //               fill
 //               sizes="(max-width: 768px) 100vw, 40vw"
 //               className="object-cover transition-transform duration-500 hover:scale-105"
@@ -78,13 +78,13 @@
 //                 <span className="font-serif font-bold text-white text-base">₹41,000/-</span>
 //               </div>
 //               <div className="flex justify-between items-center">
-//                 <span className="text-[var(--accent-light)] font-medium">अतिरिक्त सुविधा शुल्क:</span>
+//                 <span className="text-[var(--accent-light)] font-medium">बर्तन सुविधा शुल्क:</span>
 //                 <span className="font-serif font-bold text-[var(--accent-light)] text-base">+ ₹10,000/-</span>
 //               </div>
 //             </div>
 
 //             <div className="pt-2 text-xs text-slate-400 italic">
-//               * बुकिंग के समय अपनी आवश्यकतानुसार इस अतिरिक्त सुविधा का चयन करें।
+//               * बुकिंग के समय अपनी आवश्यकतानुसार इस बर्तन सुविधा का चयन करें।
 //             </div>
 //           </div>
 //         </div>
@@ -116,7 +116,7 @@ export default function AdditionalOptionCard() {
         </span>
 
         <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[var(--primary-dark)] mt-3">
-          अतिरिक्त सुविधा (Optional Additional Facility)
+          बर्तन सुविधा (Optional Additional Facility)
         </h2>
 
         <div className="mt-3 inline-block px-4 py-2 rounded-xl bg-[var(--primary-dark)] text-[var(--accent-light)] font-serif font-extrabold text-2xl sm:text-3xl shadow-md border border-[var(--accent)]/40">
@@ -145,7 +145,7 @@ export default function AdditionalOptionCard() {
           <div className="md:col-span-5 relative h-56 sm:h-64 md:h-72 w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg">
             <Image
               src={ADDITIONAL_OPTION_IMAGE}
-              alt="अतिरिक्त सुविधा (₹10,000/- Extra Option)"
+              alt="बर्तन सुविधा (₹10,000/- Extra Option)"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover transition-transform duration-500 hover:scale-105"
@@ -193,7 +193,7 @@ export default function AdditionalOptionCard() {
               {/* Optional Facility */}
               <div className="flex justify-between items-center pb-3 border-b border-white/10 gap-4">
                 <span className="text-[var(--accent-light)] font-medium">
-                  अतिरिक्त सुविधा शुल्क:
+                  बर्तन सुविधा शुल्क:
                 </span>
 
                 <span className="font-serif font-bold text-[var(--accent-light)] text-base whitespace-nowrap">
@@ -227,7 +227,7 @@ export default function AdditionalOptionCard() {
 
             {/* Note */}
             <div className="pt-2 text-xs text-slate-400 italic">
-              * ₹10,000/- अतिरिक्त सुविधा वैकल्पिक है। ₹1,500/- अतिरिक्त
+              * ₹10,000/- बर्तन सुविधा वैकल्पिक है। ₹1,500/- अतिरिक्त
               शुल्क लागू है। अंतिम राशि बुकिंग के समय स्पष्ट की जाएगी।
             </div>
 

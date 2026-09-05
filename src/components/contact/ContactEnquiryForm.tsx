@@ -161,7 +161,7 @@ export default function ContactEnquiryForm() {
                       name="phone"
                       type="tel"
                       required
-                      placeholder="e.g. +91 98290 00000"
+                      placeholder="e.g. +91 93527 29250"
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-[var(--background)] border border-[var(--border)] font-sans text-sm text-[var(--foreground)] focus:outline-none focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] transition-all"

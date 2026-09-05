@@ -19,7 +19,7 @@ import { FiCalendar, FiCheckCircle, FiInfo, FiSmartphone } from "react-icons/fi"
 // Fallback Google Calendar URL (Public Indian Holidays / General Calendar view as clean demonstration)
 // Replace with your real Google Calendar embed URL when available.
 const DEFAULT_CALENDAR_EMBED_URL =
-  "https://calendar.google.com/calendar/embed?src=sharmahimanshi96644%40gmail.com&ctz=Asia%2FKolkata";
+  "https://calendar.google.com/calendar/embed?src=dsfamilygroupjpr%40gmail.com&ctz=Asia%2FKolkata";
 
 export default function GardenAvailability() {
   const calendarEmbedUrl =
@@ -35,7 +35,7 @@ export default function GardenAvailability() {
             <span>लाइव तारीखें (Live Calendar)</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-(--primary-dark) tracking-tight">
-            बुकिंग उपलब्धता
+          बुकिंग कैलेंडर
           </h2>
           <p className="mt-3 text-sm sm:text-base text-muted-custom font-sans leading-relaxed">
             हमारे गार्डन की उपलब्ध और बुक तिथियां देखें।

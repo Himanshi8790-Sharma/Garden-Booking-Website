@@ -14,10 +14,10 @@ export default function GardenBookingCard() {
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--primary)] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3 shadow-md">
             <FiTag className="w-4 h-4 text-[var(--accent)]" />
-            <span>Pricing • बुकिंग एवं मूल्य</span>
+            <span>Pricing Section</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[var(--primary-dark)] tracking-tight">
-            बुकिंग एवं मूल्य विकल्प
+          बुकिंग एवं मूल्य विवरण
           </h2>
           <p className="mt-3 text-sm sm:text-base text-[var(--foreground-muted)] max-w-xl mx-auto">
             अपने आयोजन के अनुसार उपयुक्त बुकिंग पैकेज का चयन करें।
@@ -104,22 +104,22 @@ export default function GardenBookingCard() {
               {/* Tag Header */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 text-[var(--accent-light)] border border-[var(--accent)]/40 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 shadow-md">
                 <FiPlusCircle className="w-4 h-4 text-[var(--accent)]" />
-                <span>अतिरिक्त सुविधा विकल्प</span>
+                <span>बर्तन सुविधा विकल्प</span>
               </div>
 
               {/* Heading */}
               <h3 className="text-3xl sm:text-4xl font-serif font-bold text-[var(--background)] tracking-tight">
-                अतिरिक्त सुविधा
+                बर्तन सुविधा
               </h3>
 
               <p className="mt-3 text-base text-slate-300 font-sans max-w-xl mx-auto">
-                अतिरिक्त सुविधा केवल <span className="text-[var(--accent-light)] font-semibold">₹10,000/-</span> में उपलब्ध है। विशेष व्यवस्था, प्रीमियम सजावट एवं अतिरिक्त सुविधाएं।
+                बर्तन सुविधा केवल <span className="text-[var(--accent-light)] font-semibold">₹10,000/-</span> में उपलब्ध है। विशेष व्यवस्था, प्रीमियम सजावट एवं बर्तन सुविधाएं।
               </p>
 
               {/* Prominent Price Display - Visually Separated */}
               <div className="my-8 py-5 px-4 sm:px-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md max-w-md mx-auto flex flex-col items-center justify-center gap-1 shadow-inner">
                 <span className="text-xs sm:text-sm uppercase tracking-widest text-[var(--accent-light)] font-medium">
-                  अतिरिक्त सुविधा
+                  बर्तन सुविधा
                 </span>
                 <div className="text-4xl sm:text-5xl font-serif font-extrabold text-[var(--accent-light)] drop-shadow-md tracking-tight">
                   ₹10,000/-
@@ -159,7 +159,7 @@ export default function GardenBookingCard() {
                 href="/additional-package"
                 className="inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-light)] hover:from-[var(--accent-light)] hover:to-[var(--accent)] text-[var(--primary-dark)] font-bold text-base shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-[var(--accent)]/50"
               >
-                <span>अतिरिक्त सुविधा की जानकारी देखें</span>
+                <span>बर्तन सुविधा की जानकारी देखें</span>
                 <FiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

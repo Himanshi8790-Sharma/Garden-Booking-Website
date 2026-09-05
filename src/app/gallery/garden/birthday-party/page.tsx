@@ -33,24 +33,24 @@ const birthdayImages: GalleryItemImage[] = [
     alt: "Party lighting and balloon setup at Helping Garden Club Jaipur",
     category: "Birthday & Party",
   },
-  {
-    src: "/image/family.jpeg",
-    title: "फैमिली सेलिब्रेशन एरिया (Family Event)",
-    alt: "Family celebration area at Helping Garden Club Jaipur",
-    category: "Birthday & Party",
-  },
-  {
-    src: "/image/swing.jpeg",
-    title: "गार्डन स्विंग / झूला (Garden Swing Area)",
-    alt: "Garden swing for birthday parties at Helping Garden Club",
-    category: "Birthday & Party",
-  },
-  {
-    src: "/image/anniversary.jpeg",
-    title: "एनीवर्सरी एवं रिसेप्शन (Anniversary Venue)",
-    alt: "Anniversary party setup at Helping Garden Club Jaipur",
-    category: "Birthday & Party",
-  },
+  // {
+  //   src: "/image/family.jpeg",
+  //   title: "फैमिली सेलिब्रेशन एरिया (Family Event)",
+  //   alt: "Family celebration area at Helping Garden Club Jaipur",
+  //   category: "Birthday & Party",
+  // },
+  // {
+  //   src: "/image/swing.jpeg",
+  //   title: "गार्डन स्विंग / झूला (Garden Swing Area)",
+  //   alt: "Garden swing for birthday parties at Helping Garden Club",
+  //   category: "Birthday & Party",
+  // },
+  // {
+  //   src: "/image/anniversary.jpeg",
+  //   title: "एनीवर्सरी एवं रिसेप्शन (Anniversary Venue)",
+  //   alt: "Anniversary party setup at Helping Garden Club Jaipur",
+  //   category: "Birthday & Party",
+  // },
 ];
 
 export default function BirthdayPartyGalleryPage() {

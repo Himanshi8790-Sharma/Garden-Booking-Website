@@ -119,7 +119,7 @@ export default function HeroContent({
                 </Link>
 
                 {/* Explore Button */}
-                <Link
+                {/* <Link
                     href="/additional-package"
                     className="
                         w-full
@@ -151,7 +151,7 @@ export default function HeroContent({
                     "
                 >
                     Explore Packages
-                </Link>
+                </Link> */}
             </div>
         </div>
     );

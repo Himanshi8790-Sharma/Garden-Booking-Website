@@ -79,7 +79,7 @@ export default function BookingDetailsPage() {
             </div>
 
             <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20">
-              <span className="text-xs text-amber-900 font-medium block">अतिरिक्त सुविधा (Option)</span>
+              <span className="text-xs text-amber-900 font-medium block">बर्तन सुविधा (Option)</span>
               <span className="text-2xl font-serif font-bold text-amber-900">+ ₹10,000/-</span>
               <span className="text-xs text-amber-800 font-medium block mt-1">+ ऐच्छिक (Optional)</span>
             </div>
@@ -91,11 +91,11 @@ export default function BookingDetailsPage() {
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="tel:+919829012345"
+              href="tel:+9193527 29250"
               className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-bold text-base shadow-lg hover:shadow-xl transition-all duration-200"
             >
               <FiPhone className="w-5 h-5 text-[var(--accent)]" />
-              <span>बुकिंग के लिए कॉल करें (+91 98290 12345)</span>
+              <span>बुकिंग के लिए कॉल करें (+91 93527 29250)</span>
             </a>
           </div>
         </div> */}
@@ -131,7 +131,7 @@ export default function BookingDetailsPage() {
               {/* Optional Facility */}
               <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-400/20">
                 <span className="text-xs text-amber-200 font-medium block">
-                  अतिरिक्त सुविधा (Option)
+                  बर्तन सुविधा (Option)
                 </span>
 
                 <span className="text-2xl font-serif font-bold text-[var(--accent-light)]">
@@ -172,7 +172,7 @@ export default function BookingDetailsPage() {
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 max-w-lg mx-auto pt-2">
-              * ₹41,000/- गार्डन बुकिंग शुल्क है। ₹10,000/- अतिरिक्त सुविधा का
+              * ₹41,000/- गार्डन बुकिंग शुल्क है। ₹10,000/- बर्तन सुविधा का
               वैकल्पिक शुल्क है और ₹1,500/- अतिरिक्त शुल्क है। सभी शुल्क
               बुकिंग के समय स्पष्ट किए जाएंगे।
             </p>
@@ -180,11 +180,11 @@ export default function BookingDetailsPage() {
             {/* Call Button */}
             <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="tel:+919829012345"
+                href="tel:+919352729250"
                 className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-[var(--primary-dark)] font-bold text-base shadow-lg hover:shadow-xl transition-all duration-200"
               >
                 <FiPhone className="w-5 h-5" />
-                <span>बुकिंग के लिए कॉल करें (+91 98290 12345)</span>
+                <span>बुकिंग के लिए कॉल करें (+91 93527 29250)</span>
               </a>
             </div>
 

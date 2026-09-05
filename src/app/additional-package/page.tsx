@@ -3,9 +3,9 @@ import Link from "next/link";
 import { FiArrowLeft, FiPhone, FiCheckCircle, FiInfo, FiStar, FiPackage } from "react-icons/fi";
 
 export const metadata: Metadata = {
-  title: "अतिरिक्त सुविधा पैकेज ₹10,000/- | Helping Garden Club",
+  title: "बर्तन सुविधा पैकेज ₹10,000/- | Helping Garden Club",
   description:
-    "Helping Garden Club जयपुर में ₹10,000/- अतिरिक्त सुविधा (33 बर्तन व सामान सूची) एवं ₹1,500/- सफाई शुल्क की पूरी जानकारी।",
+    "Helping Garden Club जयपुर में ₹10,000/- बर्तन सुविधा (33 बर्तन व सामान सूची) एवं ₹1,500/- सफाई शुल्क की पूरी जानकारी।",
 };
 
 interface AdditionalItem {
@@ -15,13 +15,13 @@ interface AdditionalItem {
 }
 
 const ADDITIONAL_ITEMS: AdditionalItem[] = [
-  { id: 1, name: "देवगा", price: "₹20" },
+  { id: 1, name: "देगचा", price: "₹20" },
   { id: 2, name: "परात", price: "₹20" },
   { id: 3, name: "चूल्हा", price: "₹15" },
-  { id: 4, name: "कड़छीगर", price: "₹10" },
-  { id: 5, name: "चम्मा", price: "₹8" },
-  { id: 6, name: "डोंगी", price: "₹6" },
-  { id: 7, name: "डब्बा", price: "₹15" },
+  { id: 4, name: "कबगीर", price: "₹10" },
+  { id: 5, name: "चन्ना", price: "₹8" },
+  { id: 6, name: "डोरी", price: "₹6" },
+  { id: 7, name: "डब", price: "₹15" },
   { id: 8, name: "कैंची", price: "₹2" },
   { id: 9, name: "भगोना", price: "₹10" },
   { id: 10, name: "छोटी प्लेट", price: "₹400" },
@@ -37,7 +37,7 @@ const ADDITIONAL_ITEMS: AdditionalItem[] = [
   { id: 20, name: "सालन का चम्मच", price: "₹4" },
   { id: 21, name: "डिस", price: "₹50" },
   { id: 22, name: "डिस के चम्मच", price: "₹50" },
-  { id: 23, name: "मटकी", price: "₹3" },
+  { id: 23, name: "भट्टी", price: "₹3" },
   { id: 24, name: "कढ़ाई", price: "₹2" },
   { id: 25, name: "सिगड़ी", price: "₹2" },
   { id: 26, name: "लगन", price: "₹2" },
@@ -77,7 +77,7 @@ export default function AdditionalPackagePage() {
 
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-extrabold text-[var(--background)] mt-4 tracking-tight leading-tight">
-              अतिरिक्त सुविधा
+              बर्तन सुविधा
             </h1>
 
             <p className="mt-2 text-sm sm:text-base text-[var(--accent-light)] font-medium">
@@ -87,7 +87,7 @@ export default function AdditionalPackagePage() {
             {/* Prominent Price Display */}
             <div className="my-6 inline-flex flex-col items-center justify-center px-8 py-5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md shadow-xl max-w-md w-full">
               <span className="text-xs uppercase tracking-widest text-[var(--accent-light)] font-semibold">
-                अतिरिक्त सुविधा मूल्य
+                बर्तन सुविधा मूल्य
               </span>
               <div className="text-4xl sm:text-5xl md:text-6xl font-serif font-black text-[var(--accent-light)] drop-shadow-md tracking-tight my-1">
                 ₹10,000/-
@@ -152,7 +152,7 @@ export default function AdditionalPackagePage() {
             <span>महत्वपूर्ण जानकारी</span>
           </div>
           <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">
-            "यह सामान सिटीया खाने के हिसाब से दिया जायेगा। तन्दूर की चादर पार्टी को लानी है। जिस तारीख की बुकिंग है उसी तारीख को यह सामान मिलेगा। इसके अलावा कोई सामान लेते हैं तो अलग से चार्ज देना होगा।"
+            "यह सामान सीटिंग खाने के हिसाब से दिया जायेगा। तन्दूर की चादर पार्टी को लानी है। जिस तारीख की बुकिंग है उसी तारीख को यह सामान मिलेगा। इसके अलावा कोई सामान लेते हैं तो अलग से चार्ज देना होगा।"
           </p>
         </div>
 
@@ -185,12 +185,12 @@ export default function AdditionalPackagePage() {
             ============================================================================ */}
         <div className="p-6 sm:p-8 rounded-3xl bg-card-custom border border-[var(--border)] shadow-xl text-center space-y-4">
           <h3 className="text-xl sm:text-2xl font-serif font-bold text-[var(--primary-dark)]">
-            अतिरिक्त सुविधा विवरण (Pricing Summary)
+            बर्तन सुविधा विवरण (Pricing Summary)
           </h3>
 
           <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
             <div className="p-4 rounded-2xl bg-surface-secondary border border-[var(--border)]">
-              <span className="text-xs text-muted-custom font-medium block">अतिरिक्त सुविधा</span>
+              <span className="text-xs text-muted-custom font-medium block">बर्तन सुविधा</span>
               <span className="text-2xl font-serif font-bold text-[var(--primary-dark)]">₹10,000/-</span>
               <span className="text-xs text-emerald-700 font-medium block mt-1">✓ 33 सामान पैकेज</span>
             </div>
@@ -207,17 +207,17 @@ export default function AdditionalPackagePage() {
               कुल अतिरिक्त शुल्क: <span className="text-emerald-800 font-extrabold text-xl sm:text-2xl">₹11,500/-</span>
             </p>
             <p className="text-xs text-muted-custom max-w-lg mx-auto mt-1">
-              (₹10,000/- अतिरिक्त सुविधा + ₹1,500/- सफाई शुल्क)
+              (₹10,000/- बर्तन सुविधा + ₹1,500/- सफाई शुल्क)
             </p>
           </div>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="tel:+919829012345"
+              href="tel:+919352729250"
               className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-bold text-base shadow-lg hover:shadow-xl transition-all duration-200"
             >
               <FiPhone className="w-5 h-5 text-[var(--accent)]" />
-              <span>बुकिंग के लिए कॉल करें (+91 98290 12345)</span>
+              <span>बुकिंग के लिए कॉल करें (+91 93527 29250)</span>
             </a>
           </div>
         </div>
